@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'segmdl';
+  src: url('../fonts/segmdl2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sif-"],
+[class*=" sif-"] {
+  display: inline-block;
+  font: normal normal normal 1.5em/1;
+  font-family: segmdl, "Segoe UI", "Open Sans", serif;
+  line-height: 1 ;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  vertical-align: middle;
+  position: static;
+}
+[class^="sif-"]:before,
+[class*=" sif-"]:before {
+  font-family: segmdl, serif;
+}
+
+.sif-lg {
+  font-size: 1.3rem;
+  line-height: 0.75em;
+  vertical-align: -35%;
+}
+.sif-2x {
+  font-size: 1.75rem;
+  vertical-align: -25%;
+}
+.sif-3x {
+  font-size: 2.625rem;
+  vertical-align: -30%;
+}
+.sif-4x {
+  font-size: 3.5rem;
+  vertical-align: -35%;
+}
+
+.sif-user:before {
+  content: "\e13d";
+}

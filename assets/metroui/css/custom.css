@@ -1,0 +1,12 @@
+.app-bar-drop-container {
+  background: #ffffff !important;
+}
+
+.app-bar-drop-container:before
+{
+  background-color: #ffffff !important;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
