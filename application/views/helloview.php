@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Controller, Model, View!</title>
+	<title>Meeting | <?php echo $title?></title>
 </head>
 <body>
-	<h2><?php echo $teks?></h2>
+	<h2>sukses bikin controller yaa >< </h2>
 </body>
 </html>
