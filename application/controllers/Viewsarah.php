@@ -9,7 +9,7 @@ class Log extends CI_Controller {
 	}
 	public function index(){
 		$this->load->view('templates/header');
-		$this->load->view('home_page'); //isi sesuai keinginan
+		$this->load->view('testview'); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
 
