@@ -21,6 +21,10 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'Home';
+	//	$data['meetings'] = $this->Meeting_model->get_all(); 
+	//	$this->load->view('testview',$data);
+		$this->load->view('homeview');
+
 		$data['meetings'] = $this->Meeting_model->get_all(); 
 		$this->load->view('testview',$data);
 
@@ -28,4 +32,3 @@ class Home extends CI_Controller
 		//$this->load->view('home_page', $data);
 		//$this->load->view('templates/footer');
 	}  
-
