@@ -7,12 +7,10 @@ class Log extends CI_Controller {
 		$this->load->model('Divisi_model');
 		$this->load->model('Admin_model');
 	}
-	public function in(){
-			$username = $this->input->post('username');
-			$password = $this->input->post('password');
-			//admin_login
-			
-		
+	public function index(){
+		$this->load->view('templates/header');
+		$this->load->view('home_page'); //isi sesuai keinginan
+		$this->load->view('templates/footer');
 	}
 
 }

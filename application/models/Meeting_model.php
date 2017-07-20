@@ -8,6 +8,7 @@ class Meeting_model extends CI_Model{
 		parent::__construct();
 		$this->load->database();
 	}
+	
 	function get_all()
 	{
 		$this->db->order_by('tanggal', 'asc');

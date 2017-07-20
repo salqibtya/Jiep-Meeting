@@ -6,6 +6,9 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Meeting_model');
+		$this->load->model('Divisi_model');
+		$this->load->model('Admin_model');
+		
 	}
 
 	public function index()
@@ -13,9 +16,10 @@ class Home extends CI_Controller
 		$data['title'] = 'Home';
 		$data['meetings'] = $this->Meeting_model->get_all(); 
 		$this->load->view('testview',$data);
-		
+
 		//$this->load->view('templates/header',$data);
 		//$this->load->view('home_page', $data);
 		//$this->load->view('templates/footer');
 	}  
+
 }
