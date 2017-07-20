@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title><?=APP_NAME?> | <?=$title?></title>
+	<title>Meeting | <?=$title?></title>
 
 	<!-- load css -->
 	<?php $this->load->view('templates/css'); ?>
@@ -15,14 +15,14 @@
 </head>
 
 
-<body class="nav-md">
+<body class="nav-md" style="background:#RGB(247,247,247) ">
 <div class="container body">
   <div class="main_container">
     <div class="top_nav" style="margin-left:0px !important">
       <div class="nav_menu">
         <nav>
           <div class="nav toggle" >
-            <a href="<?=base_url()?>"><i class="fa fa-users"></i></a>
+            <a href="#"><i class="fa fa-users"></i></a>
           </div>
             
               <!-- login -->
@@ -69,7 +69,7 @@
             <!-- End # Login Form -->
             
             </li>
-        </ul>
+          </ul>
         </nav>
       </div>
     </div>

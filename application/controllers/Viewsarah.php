@@ -1,15 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Log extends CI_Controller {
+class Viewsarah extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Divisi_model');
 		$this->load->model('Admin_model');
 	}
 	public function index(){
-		$this->load->view('templates/header');
-		$this->load->view('testview'); //isi sesuai keinginan
+		$data['title'] = "Home";
+		$this->load->view('templates/header',$data);
+		$this->load->view('homeview'); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
 
