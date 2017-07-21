@@ -7,22 +7,28 @@ class Divisi_model extends CI_Model{
 		parent::__construct();
 		$this->load->database();
 	}
-	public function get_by_login2($username,$password){
-		$data['username'] = $username;
-		$data['password'] = $password;
-		$this->load->view('test2view',$data);
-		
+
+	public function get_divisi_login($username,$password){
+		$this->db->where('username_admin',$username);
+		$result = $this->getDivisi($password);
+		if(!empty($result)){
+			return $result;
+		}else{
+			return false;
+		}
 	}
 
-	public function get_by_login($username,$password){
-		$this->db->select('*');
-		$this->db->where('username_divisi',$username);
-		$this->db->where('password_divisi',$password);
+	public function getDivisi($password){
 		$query = $this->db->get('divisi');
-		if($query->num_rows()==1){
-			return $query->result();
+		if($query->num_rows()>0){
+			$result = $query->row_array();
+			if ($this->bcrypt->check_password($password,$result['password'])){
+				return $result;
+			}else{
+				return array();
+			}
 		}else{
-			return FALSE;
+			return array();
 		}
 	}
 }
