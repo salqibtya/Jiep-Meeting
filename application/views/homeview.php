@@ -1,16 +1,8 @@
-
-<!-- page content -->
-
-<div class="right_col" role="main" style="margin-left:0px !important">
-  <div class="">
-    <div class="page-title">
-      <div class="title-right">
-        <div class="col-md-8 col-md-offset-2">
-         <h3 style="text-align: center">Meeting Information System</h3>
-        </div>
-      </div>     
-    </div>
-
+<!-- home content -->
+<body class="nav-md" style="background:rgb(247,247,247) ">
+<div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
+ <div class="main_container">
+  <div class="right_col" role="main" style="margin-left:0px !important">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
@@ -35,14 +27,38 @@
                       <td style="text-align:center;">Sistem PSO</td>
                       <td style="text-align:center">IT</td>
                     </tr>
+                  <tr>
+                      <td style="text-align:center">17 Juli 2017</td>
+                      <td style="text-align:center">08.00-10.00</td>
+                      <td style="text-align:center">Meeting Room 1</td>
+                      <td style="text-align:center;">Sistem PSO</td>
+                      <td style="text-align:center">IT</td>
+                    </tr>
+                  
+                  <tr>
+                      <td style="text-align:center">17 Juli 2017</td>
+                      <td style="text-align:center">08.00-10.00</td>
+                      <td style="text-align:center">Meeting Room 1</td>
+                      <td style="text-align:center;">Sistem PSO</td>
+                      <td style="text-align:center">IT</td>
+                    </tr>
+                  
+                  <tr>
+                      <td style="text-align:center">17 Juli 2017</td>
+                      <td style="text-align:center">08.00-10.00</td>
+                      <td style="text-align:center">Auditorium Graha Dayaguna</td>
+                      <td style="text-align:center;">Sistem PSO</td>
+                      <td style="text-align:center">IT</td>
+                    </tr>
                   </tbody>
-              </table>
+                </table>
+                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
+</body>
+<!-- home content -->
