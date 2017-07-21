@@ -12,46 +12,26 @@
                 <thead>
                   <tr class="headings">
                     <th style="text-align:center">Tanggal</th>
-                    <th style="text-align:center">Jam</th>
+                    <th style="text-align:center">Jam Mulai</th>
+                    <th style="text-align:center">Jam Selesai</th>
                     <th style="text-align:center">Ruangan</th>
                     <th style="text-align:center">Perihal</th> 
                     <th style="text-align:center">Pengguna</th> 
                     </tr>
                 </thead>
-
                 <tbody>
+                <?php foreach($meetings as $meetings_item):?>
                     <tr>
-                      <td style="text-align:center">17 Juli 2017</td>
-                      <td style="text-align:center">08.00-10.00</td>
-                      <td style="text-align:center">Meeting Room 1</td>
-                      <td style="text-align:center;">Sistem PSO</td>
-                      <td style="text-align:center">IT</td>
+                      <td style="text-align:center"><?=$meetings_item['tanggal']?></td>
+                      <td style="text-align:center"><?=$meetings_item['waktu_mulai']?></td>
+                      <td style="text-align:center"><?=$meetings_item['waktu_selesai']?></td>
+                      <td style="text-align:center"><?=$meetings_item['nama_ruangan']?></td>
+                      <td style="text-align:center;"><?=$meetings_item['perihal']?></td>
+                      <td style="text-align:center"><?=$meetings_item['nama_divisi']?></td>
                     </tr>
-                  <tr>
-                      <td style="text-align:center">17 Juli 2017</td>
-                      <td style="text-align:center">08.00-10.00</td>
-                      <td style="text-align:center">Meeting Room 1</td>
-                      <td style="text-align:center;">Sistem PSO</td>
-                      <td style="text-align:center">IT</td>
-                    </tr>
-                  
-                  <tr>
-                      <td style="text-align:center">17 Juli 2017</td>
-                      <td style="text-align:center">08.00-10.00</td>
-                      <td style="text-align:center">Meeting Room 1</td>
-                      <td style="text-align:center;">Sistem PSO</td>
-                      <td style="text-align:center">IT</td>
-                    </tr>
-                  
-                  <tr>
-                      <td style="text-align:center">17 Juli 2017</td>
-                      <td style="text-align:center">08.00-10.00</td>
-                      <td style="text-align:center">Auditorium Graha Dayaguna</td>
-                      <td style="text-align:center;">Sistem PSO</td>
-                      <td style="text-align:center">IT</td>
-                    </tr>
+                    <?php endforeach?>
                   </tbody>
-                </table>
+                 </table>
                  </div>
               </div>
             </div>
