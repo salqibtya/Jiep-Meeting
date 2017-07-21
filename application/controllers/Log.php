@@ -9,44 +9,41 @@ class Log extends CI_Controller {
 	}
 	
 	public function in(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		if(!isset($username)||!isset($password)){
-			$this->load->view('loginview');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('userpass', 'Password', 'required');
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('logview');
 		}else{
-			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-				</button>
-				<span><strong>Perhatian!</strong> Username atau password salah.
-				</div>';
-			if($this->Admin_model->get_admin_login($username,$password)==false){
-				if($this->Divisi_model->get_divisi_login($username,$password)==false){
-					$this->session->set_flashdata('alert', $alert);
-					$this->load->view('loginview');
+			$username = $this->input->post('username');
+			$password = $this->input->post('userpass');
+			$result = $this->Admin_model->get_admin_login($username,$password);
+			if ($result == FALSE){
+				$result2 = $this->Divisi_model->get_divisi_login($username,$password);
+				if($result2 == FALSE){
+					$this->load->view('logview');
 				}else{
-					$result=get_divisi_login($username,$password);
 					$session_data = array(
-						'id_user'=>$result['id_divisi'],
-						'nama_divisi'=>$result['nama_divisi'],
-						'level_user'=>1
+						'name' => $result2['name_divisi'],
+						'status'=> "divisi",
+						'type' => 1
 					);
 					$this->session->set_userdata($session_data);
-					$this->load->view('adminview');
+					redirect('/Divisi');
 				}
 			}else{
-				$result=get_admin_login($username,$password);
 				$session_data = array(
-					'id_user'=>$result['id_admin'],
-					'level_user'=>9
+					'name' => "admin",
+					'status'=>"admin",
+					'type'=>9
 				);
 				$this->session->set_userdata($session_data);
-				$this->load->view('adminview');
-			}
+				redirect('/Admin');
+			}	
 		}
 	}
 
 	public function out(){
 		$this->session->sess_destroy();
-		redirect('homeview');
+		redirect('/Home');
 	}
 }

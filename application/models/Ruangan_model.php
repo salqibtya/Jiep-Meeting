@@ -7,4 +7,9 @@ class Ruangan_model extends CI_Model{
 		parent::__construct();
 		$this->load->database();
 	}
+
+	public function get_all_ruangan(){
+		return $this->db->get('ruangan')->result_array();
+	}
+
 }

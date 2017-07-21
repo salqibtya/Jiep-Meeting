@@ -14,15 +14,15 @@ class Admin_model extends CI_Model{
 		if(!empty($result)){
 			return $result;
 		}else{
-			return false;
+			return FALSE;
 		}
 	}
 
-	public function getAdmin($password){
+	public function getAdmin($pass){
 		$query = $this->db->get('admin');
 		if($query->num_rows()>0){
 			$result = $query->row_array();
-			if ($this->bcrypt->check_password($password,$result['password'])){
+			if ($this->bcrypt->check_password($pass,$result['password_admin'])){
 				return $result;
 			}else{
 				return array();

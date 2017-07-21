@@ -8,13 +8,17 @@ class Divisi_model extends CI_Model{
 		$this->load->database();
 	}
 
+	public function get_all_divisi(){
+		return $this->db->get('divisi')->result_array();
+	}
+
 	public function get_divisi_login($username,$password){
-		$this->db->where('username_admin',$username);
+		$this->db->where('username_divisi',$username);
 		$result = $this->getDivisi($password);
 		if(!empty($result)){
 			return $result;
 		}else{
-			return false;
+			return FALSE;
 		}
 	}
 
@@ -22,7 +26,7 @@ class Divisi_model extends CI_Model{
 		$query = $this->db->get('divisi');
 		if($query->num_rows()>0){
 			$result = $query->row_array();
-			if ($this->bcrypt->check_password($password,$result['password'])){
+			if ($this->bcrypt->check_password($password,$result['password_divisi'])){
 				return $result;
 			}else{
 				return array();

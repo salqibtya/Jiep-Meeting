@@ -5,6 +5,8 @@
   </div>
   <div class="clearfix"></div>
 </footer>
+
 <!-- footer -->
 
+<!-- /footer content -->
 </html>

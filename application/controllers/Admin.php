@@ -13,7 +13,19 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('adminview');
+		$data['divisis'] = $this->Divisi_model->get_all_divisi(); 
+		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan(); 
+
+		if($_SESSION['status']=="admin"){
+			$data['title'] = "Admin";
+			$this->load->view('templates/header',$data);
+			$this->load->view('adminview',$data);
+			$this->load->view('templates/footer');
+			
+		}else{
+			redirect('/Home');
+		}
+		
 	}
 
 	public function insertdivisi(){
