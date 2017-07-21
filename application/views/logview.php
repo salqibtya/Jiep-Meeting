@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php $this->load->view('templates/css'); ?>
   <?= $this->session->flashdata('alert') ?>
-  <title>Meeting | <?=$title?></title>
+  <title>Meeting | Login</title>
 </head>
 
 <!-- login content -->
@@ -29,12 +29,13 @@
     <div>
      <button class="btn btn-default submit" type="submit">Masuk</button>
     </div>
-
+    <?= $this->session->flashdata('alert') ?>
     <div class="clearfix"></div>
     <div class="separator">
     <div class="clearfix"></div>
     
     <div>
+     <img src="./assets/img/jiepicon.png">
      <h1>Meeting Information System</h1>
      <p>©<?=date('Y')?> IT-JIEP. All Rights Reserved.</p>
     </div>

@@ -15,8 +15,7 @@ class Home extends CI_Controller
 	{
 		$data['title'] = 'Home'; 
 		$data['meetings'] = $this->Meeting_model->get_all(); 
-	//	$this->load->view('testview',$data);
-
+	
 		$this->load->view('templates/header',$data);
 		$this->load->view('homeview', $data);
 		$this->load->view('templates/footer');

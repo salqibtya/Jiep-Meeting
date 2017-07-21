@@ -28,7 +28,11 @@
                  
 
         <!-- button login -->
-         <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myLogin"> <a id="#"><i class="fa fa-lock"> Login</i></a></button>
+        <?php if($this->session->userdata('status')){?>
+          <a class="btn" href="<?= base_url(); ?>logout"><div class="fa fa-unlock"></div> Logout</a>
+        <?php }else{?>
+          <a class="btn" href="<?= base_url(); ?>login"><div class="fa fa-lock"></div> Login</a>
+        <?php }?>
 
         <!--<div class="modal fade" id="myLogin" role="dialog">
             <div class="modal-dialog">
