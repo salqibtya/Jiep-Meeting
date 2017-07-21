@@ -27,10 +27,10 @@
               <li>
                  
 
-          <!-- button login -->
-         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myLogin">Login</button>
+        <!-- button login -->
+         <button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myLogin"> <a id="#"><i class="fa fa-lock"> Login</i></a></button>
 
-        <div class="modal fade" id="myLogin" role="dialog">
+        <!--<div class="modal fade" id="myLogin" role="dialog">
             <div class="modal-dialog">
              <div class="modal-header">
                     <h1>LOGIN ANJAY</h1>   
@@ -48,7 +48,7 @@
                
              </div>
             </div>
-        </div>
+        </div> -->
 
                  
               </li>

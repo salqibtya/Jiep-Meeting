@@ -27,7 +27,10 @@
            <tr class="headings">
             <th style="text-align:center">Nomor</th>
             <th style="text-align:center">Nama Ruangan</th>
-            <th style="text-align:center;width:100px"></th>
+            <th style="text-align:center;width:100px">
+              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+            </th>
+
            </tr>
           </thead>
 
@@ -62,7 +65,9 @@
            <tr class="headings">
             <th style="text-align:center">Nomor</th>
             <th style="text-align:center">Nama Divisi</th>
-            <th style="text-align:center;width:100px"></th>
+            <th style="text-align:center;width:100px">
+              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+            </th>
            </tr>
           </thead>
 
