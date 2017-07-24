@@ -26,8 +26,7 @@
 
 						<br>
 
-						<?=form_open('meetings/do_tambah', array('class'=>'form-horizontal form-label-left'))?>
-
+						<div class="form-horizontal form-label-left">
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Ruangan</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
@@ -40,6 +39,7 @@
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<input type="number" min="0" name="kapasitas_ruangan" class="form-control col-md-7 col-xs-12">
 							</div>
+						</div>
 						</div>
 
 						<div class="ln_solid"></div>
