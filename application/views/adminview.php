@@ -41,6 +41,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                      <h4 class="modal-title" style="color: black">Tambah Ruangan</h4>
                   </div>
+<<<<<<< HEAD
                   <div class="modal-body">
                    <label class="col-sm-2  control-label" for="sm" style="color: black">Nama Ruangan</label>
                    <input class="form-control" type="text" name="nama_ruangan" id="sm" style="color: black">
@@ -53,6 +54,14 @@
                   </div>
                 <!-- modal for add room-->
                 </div>  
+=======
+               
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Tambah</button>
+                </div>
+              </div>
+              </form>
+>>>>>>> origin/master
               </div>
               <?=form_close()?>
               </div>
@@ -94,8 +103,13 @@
             <th style="text-align:center;width:100px">
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"> Tambah</i></button>
               
+<<<<<<< HEAD
               <!-- Modal -->
               <?=form_open('Admin/insertdivisi')?>
+=======
+              <!-- Modal --> 
+              
+>>>>>>> origin/master
               <div class="modal fade" id="myModal1" role="dialog">
               <div class="modal-dialog modal-md">
                 <div class="modal-content">
@@ -121,8 +135,12 @@
               </div>
               </div>
               </div>
+<<<<<<< HEAD
               <?= form_close() ?>
           </div>
+=======
+          </div> -->
+>>>>>>> origin/master
             </th>
             </tr>
             </thead>
