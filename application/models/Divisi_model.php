@@ -37,7 +37,14 @@ class Divisi_model extends CI_Model{
 	}
 
 	public function insert($data){
-		$this->db->isert('divisi',$data);
+		$this->db->insert('divisi',$data);
 		return ($this->db->affected_rows() != 1) ? false : true;
 	}
+
+	public function delete($id_ruangan){
+		$this->db->where('id_divisi',$id_ruangan);
+		$this->db->delete('divisi');
+		return ($this->db->affected_rows() != 1) ? false : true;
+	}
+
 }

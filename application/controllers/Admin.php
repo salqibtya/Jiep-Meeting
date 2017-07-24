@@ -79,4 +79,48 @@ class Admin extends CI_Controller
 		redirect('/Admin');
 	}
 
+	public function deleteruangan($id_ruangan){
+		$result = $this->Ruangan_model->delete($id_ruangan);
+		// notification
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Ruangan telah berhasil dihapus.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Penghapusan ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		redirect('Admin');
+	}
+
+	public function deletedivisi($id_divisi){
+		$result = $this->Divisi_model->delete($id_divisi,array('id_divisi'=>$id_divisi));
+		// notification
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Ruangan telah berhasil dihapus.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Penghapusan ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		redirect('Admin');
+	}
+
 } 

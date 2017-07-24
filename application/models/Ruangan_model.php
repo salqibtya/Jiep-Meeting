@@ -13,8 +13,13 @@ class Ruangan_model extends CI_Model{
 	}
 
 	public function insert($data){
-		$this->db->isert('meeting',$data);
+		$this->db->insert('ruangan',$data);
 		return ($this->db->affected_rows() != 1) ? false : true;
 	}
 
+	public function delete($id_ruangan){
+		$this->db->where('id_ruangan',$id_ruangan);
+		$this->db->delete('ruangan');
+		return ($this->db->affected_rows() != 1) ? false : true;
+	}
 }
