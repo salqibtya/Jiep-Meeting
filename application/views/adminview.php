@@ -28,14 +28,35 @@
             <th style="text-align:center">Nomor</th>
             <th style="text-align:center">Nama Ruangan</th>
             <th style="text-align:center;width:100px">
-              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
-            </th>
+              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></button>
 
-           </tr>
-          </thead>
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Tambah Ruangan</h4>
+              </div>
+              
+              <div class="modal-body">
+                <input type="text" name="ruangan">
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-center" data-dismiss="modal">Tambah</button>
+              </div>
+              </div>
+              </div>
+              </div>
+<!--<a href="/views/modal.php" class="btn btn-primary btn-xs" style="color: rgb(247,247,247);" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></a>-->
+           </th>
+          </tr>
+         </thead>
 
-          <tbody>
-           <tr>
+        <tbody>
+          <tr>
             <td style="text-align:center">1</td>
             <td style="text-align:center">Meeting Room 1</td>
             <td style="text-align:center;width:100px">
@@ -66,7 +87,7 @@
             <th style="text-align:center">Nomor</th>
             <th style="text-align:center">Nama Divisi</th>
             <th style="text-align:center;width:100px">
-              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i></a>
+              <a href="#" class="btn btn-primary btn-xs" style="color: rgb(247,247,247);"><i class="fa fa-plus">  Tambah</i></a>
             </th>
            </tr>
           </thead>

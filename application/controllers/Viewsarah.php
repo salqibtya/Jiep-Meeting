@@ -9,9 +9,11 @@ class Viewsarah extends CI_Controller {
 	}
 	public function index(){
 		$data['title'] = "Home";
+		// $data = array('modals' => 'true','modals' => set_value('alert','false'),);
+		$this->load->view('templates/header', $data);
+		$this->load->view('adminview'); //isi sesuai keinginan
 		$this->load->view('templates/header',$data);
 		$this->load->view('testview'); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
-
 }
