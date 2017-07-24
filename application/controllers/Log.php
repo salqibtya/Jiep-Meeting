@@ -44,6 +44,6 @@ class Log extends CI_Controller {
 
 	public function out(){
 		$this->session->sess_destroy();
-		redirect('/Home');
+		redirect('');
 	}
 }

@@ -102,7 +102,7 @@ class Admin extends CI_Controller
 	}
 
 	public function deletedivisi($id_divisi){
-		$result = $this->Divisi_model->delete($id_divisi,array('id_divisi'=>$id_divisi));
+		$result = $this->Divisi_model->delete($id_divisi 	);
 		// notification
 		if ($result) {
 			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -123,4 +123,21 @@ class Admin extends CI_Controller
 		redirect('Admin');
 	}
 
+	public function editruangan($id_ruangan){
+		$data['title'] ="Edit Ruangan";
+		$data['ruangans'] = $this->Ruangan_model->getoneruangan($id_ruangan);
+		$this->load->view('templates/header',$data);
+		$this->load->view('editruangan',$data); //isi sesuai keinginan
+		$this->load->view('templates/footer');
+	}
+
+	public function do_edit(){
+		$id_ruangan  = $this->input->post('id');
+		$data = array(
+			'nama_ruangan'=>$this->input->post('nama_ruangan'),
+			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan')
+		);
+		$this->Ruangan_model->update($id_ruangan,$data);
+		redirect('Admin');
+	}
 } 
