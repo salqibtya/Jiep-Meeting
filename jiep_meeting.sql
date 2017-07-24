@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2017 at 03:34 AM
+-- Generation Time: Jul 24, 2017 at 09:24 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.15
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
   `username_admin` varchar(45) DEFAULT NULL,
-  `password_admin` varchar(45) DEFAULT NULL
+  `password_admin` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -67,8 +67,16 @@ CREATE TABLE `divisi` (
   `id_divisi` int(11) NOT NULL,
   `nama_divisi` varchar(45) DEFAULT NULL,
   `username_divisi` varchar(45) DEFAULT NULL,
-  `password_divisi` varchar(45) DEFAULT NULL
+  `password_divisi` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `divisi`
+--
+
+INSERT INTO `divisi` (`id_divisi`, `nama_divisi`, `username_divisi`, `password_divisi`) VALUES
+(1, 'Information Technology', 'IT', 'okeaja'),
+(2, 'Organization Development', 'odqu', 'inisaja');
 
 -- --------------------------------------------------------
 
@@ -84,7 +92,8 @@ CREATE TABLE `meeting` (
   `estimasi_peserta` varchar(45) DEFAULT NULL,
   `PIC` varchar(45) DEFAULT NULL,
   `divisi_meeting` int(11) DEFAULT NULL,
-  `ruangan_meeting` int(11) DEFAULT NULL
+  `ruangan_meeting` int(11) DEFAULT NULL,
+  `perihal` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -144,6 +153,40 @@ ALTER TABLE `meeting`
 ALTER TABLE `ruangan`
   ADD PRIMARY KEY (`id_ruangan`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `anggota_divisi`
+--
+ALTER TABLE `anggota_divisi`
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `anggota_meeting`
+--
+ALTER TABLE `anggota_meeting`
+  MODIFY `id_anggota_meeting` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `divisi`
+--
+ALTER TABLE `divisi`
+  MODIFY `id_divisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `meeting`
+--
+ALTER TABLE `meeting`
+  MODIFY `id_meeting` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ruangan`
+--
+ALTER TABLE `ruangan`
+  MODIFY `id_ruangan` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

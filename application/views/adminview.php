@@ -47,7 +47,7 @@
                   <label class="col-sm-2  control-label" for="sm" style="color: black">Kapasitas</label>
                   <input class="form-control" type="number" min="0" id="sm" style="color: black">
                   </div>
-              
+               
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-primary" data-dismiss="modal">Tambah</button>
                 </div>
@@ -95,7 +95,8 @@
             <th style="text-align:center;width:100px">
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"> Tambah</i></button>
               
-              <!-- Modal -->
+              <!-- Modal --> 
+              
               <div class="modal fade" id="myModal1" role="dialog">
               <div class="modal-dialog modal-md">
               <form>
@@ -123,7 +124,7 @@
               </form>
               </div>
               </div>
-          </div>
+          </div> -->
             </th>
             </tr>
             </thead>
