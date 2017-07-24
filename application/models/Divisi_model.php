@@ -35,4 +35,9 @@ class Divisi_model extends CI_Model{
 			return array();
 		}
 	}
+
+	public function insert($data){
+		$this->db->isert('divisi',$data);
+		return ($this->db->affected_rows() != 1) ? false : true;
+	}
 }
