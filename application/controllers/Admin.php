@@ -79,4 +79,65 @@ class Admin extends CI_Controller
 		redirect('/Admin');
 	}
 
+	public function deleteruangan($id_ruangan){
+		$result = $this->Ruangan_model->delete($id_ruangan);
+		// notification
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Ruangan telah berhasil dihapus.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Penghapusan ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		redirect('Admin');
+	}
+
+	public function deletedivisi($id_divisi){
+		$result = $this->Divisi_model->delete($id_divisi 	);
+		// notification
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Ruangan telah berhasil dihapus.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Penghapusan ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		redirect('Admin');
+	}
+
+	public function editruangan($id_ruangan){
+		$data['title'] ="Edit Ruangan";
+		$data['ruangans'] = $this->Ruangan_model->getoneruangan($id_ruangan);
+		$this->load->view('templates/header',$data);
+		$this->load->view('editruangan',$data); //isi sesuai keinginan
+		$this->load->view('templates/footer');
+	}
+
+	public function do_edit(){
+		$id_ruangan  = $this->input->post('id');
+		$data = array(
+			'nama_ruangan'=>$this->input->post('nama_ruangan'),
+			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan')
+		);
+		$this->Ruangan_model->update($id_ruangan,$data);
+		redirect('Admin');
+	}
 } 
