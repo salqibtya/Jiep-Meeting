@@ -29,29 +29,35 @@
             <th style="text-align:center">Nama Ruangan</th>
             <th style="text-align:center;width:100px">
               <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></button>
-
+              
               <!-- Modal -->
-              <div id="myModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Tambah Ruangan</h4>
-              </div>
+              <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog modal-md">
+              <form>
+                <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="color: black">Tambah Ruangan</h4>
+                </div>
               
-              <div class="modal-body">
-                <input type="text" name="ruangan">
-              </div>
+                <div class="modal-body">
+                  <label class="col-sm-2  control-label" for="sm" style="color: black">Ruangan</label>
+                  <!--<h5 style="text-align: left; color: black"> Nama Ruangan </h5> -->
+                  <input class="form-control" type="text" id="sm" style="color: black">
+                  <label class="col-sm-2  control-label" for="sm" style="color: black">Kapasitas</label>
+                  <input class="form-control" type="number" min="0" id="sm" style="color: black">
+                  </div>
               
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-center" data-dismiss="modal">Tambah</button>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Tambah</button>
+                </div>
+              </div>
+              </form>
               </div>
               </div>
-              </div>
-              </div>
-<!--<a href="/views/modal.php" class="btn btn-primary btn-xs" style="color: rgb(247,247,247);" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></a>-->
-           </th>
+        </div>
+
+       </th>
           </tr>
          </thead>
 
@@ -87,10 +93,40 @@
             <th style="text-align:center">Nomor</th>
             <th style="text-align:center">Nama Divisi</th>
             <th style="text-align:center;width:100px">
-              <a href="#" class="btn btn-primary btn-xs" style="color: rgb(247,247,247);"><i class="fa fa-plus">  Tambah</i></a>
+              <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus"> Tambah</i></button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="myModal1" role="dialog">
+              <div class="modal-dialog modal-md">
+              <form>
+                <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title" style="color: black">Tambah Divisi</h4>
+                </div>
+              
+                <div class="modal-body">
+                  <label class="col-sm-2  control-label" for="sm" style="color: black">Nama Divisi</label>
+                  <input class="form-control" type="text" id="sm" style="color: black">
+                  
+                  <label class="col-sm-2  control-label" for="sm" style="color: black">Username </label>
+                  <input class="form-control" type="text" id="sm" style="color: black">
+                  
+                  <label class="col-sm-2  control-label" for="sm" style="color: black">Password</label>
+                  <input class="form-control" type="Password" id="sm" style="color: black">
+                  </div>
+              
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Tambah</button>
+                </div>
+              </div>
+              </form>
+              </div>
+              </div>
+          </div>
             </th>
-           </tr>
-          </thead>
+            </tr>
+            </thead>
 
           <tbody>
            <tr>
