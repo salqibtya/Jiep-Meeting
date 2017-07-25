@@ -18,6 +18,7 @@
 					<div class="x_content">
 						
 						<br>
+
 						<?php foreach($ruangans as $ruangan_item):?>
 						<div class="form-horizontal form-label-left">
 						<div class="form-group">
@@ -35,6 +36,7 @@
 							<input type="hidden" name="id" value="<?=$ruangan_item['id_ruangan']?>">
 						</div>
 						</div>
+
 						<?php endforeach ?>
 						<div class="ln_solid"></div>
 						<div class="form-group">
