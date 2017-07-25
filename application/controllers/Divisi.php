@@ -48,5 +48,20 @@ class Divisi extends CI_Controller
 		$this->Anggotadivisi_model->insertanggota($data);
 		redirect('Divisi/anggotadivisi');
 	}
+	
+	public function tambahmeeting(){
+		$data = array(
+			'perihal' => $this->input->post('perihal'),
+			'ruangan_meeting' => $this->input->post('ruangan_meeting'),
+			'tanggal' => $this->input->post('tanggal'),
+			'waktu_mulai' => $this->input->post('waktu_mulai'),
+			'waktu_selesai' => $this->input->post('waktu_selesai'),
+			'estimasi_peserta' => $this->input->post('estimasi_peserta'),
+			'PIC' => $this->input->post('pic')
+			);
+		$this->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+	}	
+
+
 
 } 
