@@ -23,6 +23,7 @@ class Log extends CI_Controller {
 					$this->load->view('logview');
 				}else{
 					$session_data = array(
+						'id_user'=>$result2['id_divisi'],
 						'name' => $result2['name_divisi'],
 						'status'=> "divisi",
 						'type' => 1

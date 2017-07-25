@@ -7,6 +7,8 @@ class Divisi extends CI_Controller
 		parent::__construct();
 		$this->load->model('Meeting_model');
 		$this->load->model('Divisi_model');
+		$this->load->model('Anggotadivisi_model');
+
 		
 	}
 
@@ -27,5 +29,24 @@ class Divisi extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
+	public function anggotadivisi(){
+		$data['title'] = 'Anggota Divisi';
+		$data['anggotas'] = $this->Anggotadivisi_model->get_all_anggota();
+
+		$this->load->view('templates/header',$data);
+		$this->load->view('anggotadivisiview', $data);
+		$this->load->view('templates/footer');
+
+	}
+
+	public function tambahanggota(){
+		$data = array(
+			'nama'=>$this->input->post('nama_anggota'),
+			'email'=>$this->input->post('email_anggota'),
+			'divisi_anggota'=>$this->session->userdata('id_user')
+		);
+		$this->Anggotadivisi_model->insertanggota($data);
+		redirect('Divisi/anggotadivisi');
+	}
 
 } 

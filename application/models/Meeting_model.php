@@ -18,4 +18,5 @@ class Meeting_model extends CI_Model{
 		$this->db->where('tanggal >= CURDATE()');
 		return $this->db->get('meeting')->result_array();
 	}
+	
 }
