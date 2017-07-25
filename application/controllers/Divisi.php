@@ -8,6 +8,7 @@ class Divisi extends CI_Controller
 		$this->load->model('Meeting_model');
 		$this->load->model('Divisi_model');
 		$this->load->model('Anggotadivisi_model');
+		$this->load->model('Ruangan_model');
 
 		
 	}
@@ -50,6 +51,14 @@ class Divisi extends CI_Controller
 	}
 	
 	public function tambahmeeting(){
+		$data['title'] = "Tambah Meeting";
+		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
+		$this->load->view('templates/header',$data);
+		$this->load->view('tambahmeetingview', $data);
+		$this->load->view('templates/footer');
+	}   
+
+	public function do_tambah(){
 		$data = array(
 			'perihal' => $this->input->post('perihal'),
 			'ruangan_meeting' => $this->input->post('ruangan_meeting'),
@@ -60,6 +69,6 @@ class Divisi extends CI_Controller
 			'PIC' => $this->input->post('pic ')
 			);
 		$this->Meeting_model->insertmeeting();
-		}
 	}
-	
+}
+                                                              

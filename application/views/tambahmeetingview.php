@@ -23,7 +23,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Perihal</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" name="perihal" class="form-control col-md-7 col-xs-12">
+								<input type="text" placeholder="perihal" name="perihal" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
@@ -31,7 +31,9 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Ruangan</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select id="ruangan" name="ruangan" class="form-control" required>
-									<option value="">-- pilih ruangan --</option>
+									<?php foreach($ruangans as $ruangan_item):?>
+									<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan'];?></option>
+									<?php endforeach ?>
 								</select>
 							</div>
 						</div>
@@ -39,44 +41,43 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="date" name="tanggal" class="form-control col-md-7 col-xs-12">
+								<input type="date" placeholder="dd/mm/yyyy" name="tanggal" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Jam mulai</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="time" name="waktu_mulai" class="form-control col-md-7 col-xs-12">
+								<input type="time" placeholder="hh:mm" name="waktu_mulai" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Jam selesai</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="time" name="waktu_selesai" class="form-control col-md-7 col-xs-12">
+								<input type="time" placeholder="hh:mm" name="waktu_selesai" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
-					<!--	<div class="form-group">
+						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Peserta</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
 								<select id="pengguna_meetings" name="pengguna_meetings" class="form-control" required>
-									<option value="">-- pilih pengguna --</option>
+									<option value="">-- pilih Peserta --</option>
 								</select>
 							</div>
 						</div>
-					-->
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Estimasi peserta</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="number" name="estimasi_peserta" class="form-control col-md-7 col-xs-12">
+								<input type="number" placeholder="estimasi peserta" name="estimasi_peserta" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">PIC</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" name="pic" class="form-control col-md-7 col-xs-12">
+								<input type="text" placeholder="PIC" name="pic" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 

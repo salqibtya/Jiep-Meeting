@@ -6,6 +6,7 @@
   <div class="right_col" role="main" style="margin-left:0px !important">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
+        <a href="<?=base_url('Divisi/tambahmeeting')?>"><i class="fa fa-user-plus">Tambah</i></a>
         <div class="x_panel">
           <div class="x_content">
             <div class="table-responsive">
@@ -17,10 +18,10 @@
                     <th style="text-align:center">Jam Selesai</th>
                     <th style="text-align:center">Ruangan</th>
                     <th style="text-align:center">Perihal</th>
-                    </tr>
+                  </tr>
                 </thead>
                 <tbody>
-                <?php foreach($meetings as $meetings_item):?>
+                  <?php foreach($meetings as $meetings_item):?>
                     <tr>
                       <td style="text-align:center"><?=$meetings_item['tanggal']?></td>
                       <td style="text-align:center"><?=$meetings_item['waktu_mulai']?></td>
@@ -29,15 +30,15 @@
                       <td style="text-align:center;"><?=$meetings_item['perihal']?></td>
                     </tr>
                     <?php endforeach?>
-                  </tbody>
-                 </table>
-                 </div>
-              </div>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+ </div>
+</div>
 </body>
 <!-- home content -->
