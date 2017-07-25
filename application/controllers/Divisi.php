@@ -14,7 +14,7 @@ class Divisi extends CI_Controller
 
 	public function index(){
 		$data['title'] = 'My Meeting';
-
+		$data['meetings'] = $this->Meeting_model->get_one_divisi();
 		$this->load->view('templates/header',$data);
 		$this->load->view('divisiview',$data);
 		$this->load->view('templates/footer');
