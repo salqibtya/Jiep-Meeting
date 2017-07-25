@@ -47,4 +47,18 @@ class Divisi_model extends CI_Model{
 		return ($this->db->affected_rows() != 1) ? false : true;
 	}
 
+	public function getonedivisi($id_divisi){	
+		$this->db->where('id_divisi',$id_divisi);
+		return $this->db->get('divisi')->result_array();
+	}
+
+	public function updatedivisi($id_divisi, $data) {
+        $this->db->set($data);
+        $this->db->where('id_divisi',$id_divisi);
+        $this->db->update('divisi');
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+
+
 }

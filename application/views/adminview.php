@@ -137,7 +137,7 @@
             <td style="text-align:center"><?=$divisi_item['nama_divisi']?></td>
             <td style="text-align:center"><?=$divisi_item['username_divisi']?></td>
             <td style="text-align:center;width:100px">
-              <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+              <a href="<?php echo base_url(); ?>Admin/editdivisi/<?php echo $divisi_item['id_divisi'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
               <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>admin/deletedivisi/<?php echo $divisi_item['id_divisi'];?>"><i class="fa fa-trash-o"></i></a>
             </td>
            </tr>
