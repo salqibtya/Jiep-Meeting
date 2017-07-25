@@ -131,13 +131,67 @@ class Admin extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	public function do_edit(){
+	public function do_edit($id_ruangan){
 		$id_ruangan  = $this->input->post('id');
 		$data = array(
 			'nama_ruangan'=>$this->input->post('nama_ruangan'),
 			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan')
 		);
-		$this->Ruangan_model->update($id_ruangan,$data);
+		$result = $this->Ruangan_model->update($id_ruangan,$data);
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Ruangan telah berhasil diubah.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Pengubahan ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
 		redirect('Admin');
+	}
+
+	public function editdivisi($id_divisi){
+		$data['title'] = "Edit Divisi";
+		$data['divisis'] = $this->Divisi_model->getonedivisi($id_divisi);
+		$this->load->view('templates/header', $data);
+		$this->load->view('editdivisi', $data);
+		$this->load->view('templates/footer');
+
+	}
+
+	public function do_editdivisi($id_divisi){
+		$id_divisi  = $this->input->post('id');
+		$data = array(
+			'nama_divisi'=>$this->input->post('nama_divisi'),
+			'username_divisi'=>$this->input->post('username_divisi'),
+			'password_divisi'=>$this->input->post('password_divisi')
+		);
+		$result = $this->Divisi_model->updatedivisi($id_divisi,$data);
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Divisi telah berhasil diubah.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Pengubahan divisi gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		
+		redirect('Admin');
+
 	}
 } 

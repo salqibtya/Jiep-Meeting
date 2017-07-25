@@ -11,7 +11,7 @@ class Viewsarah extends CI_Controller {
 		$data['title'] = "Edit Divisi";
 		// $data = array('modals' => 'true','modals' => set_value('alert','false'),);
 		$this->load->view('templates/header',$data);
-		$this->load->view('divisiview'); //isi sesuai keinginan
+		$this->load->view('anggotadivisiview'); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
 }
