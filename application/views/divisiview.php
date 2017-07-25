@@ -3,15 +3,7 @@
 <div class="right_col" role="main" style="margin-left:0px!important">
   <div class="page-title">
    <div class="title-right" style="background-color: rgb(247,247,247)">   
-   <nav class="navbar navbar-primary">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">My Meeting</a></li>
-        <li class="active"><a href="#">My Anggota</a></li>
-        <li class="active"><a href="#">All Meeting</a></li>
-        </ul>
-    </div> 
-   </nav>
+   <?php $this->load->view('templates/menubar'); ?>
 
    <div class="row">
    <div class="col-md-12 col-sm-12 col-xs-12">
