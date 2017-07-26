@@ -8,6 +8,11 @@ class Anggotadivisi_model extends CI_Model{
 		$this->load->database();
 	}
 
+	public function get_all(){
+		$this->db->join('divisi','id_divisi = divisi_anggota');
+		return $this->db->get('anggota_divisi')->result_array();
+	}
+
 	public function get_all_anggota(){
 		$id = $this->session->userdata('id_user');
 		$this->db->where('divisi_anggota',$id);

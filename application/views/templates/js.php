@@ -31,3 +31,8 @@
 <!-- priceFormat -->
 <script src="<?php echo base_url(); ?>assets/js/priceformat/jquery.priceformat.min.js"></script>
 <!-- /priceFormat -->
+
+
+<!-- select2 js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<!-- /select2 js -->
