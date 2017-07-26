@@ -9,6 +9,8 @@ class Divisi extends CI_Controller
 		$this->load->model('Divisi_model');
 		$this->load->model('Anggotadivisi_model');
 		$this->load->model('Ruangan_model');
+		$this->load->model('Anggotameeting_model');
+			
 	}
 
 	public function index(){
@@ -68,17 +70,81 @@ class Divisi extends CI_Controller
 		$this->load->view('templates/footer');
 	}   
 
-	public function do_tambah(){
-		$data = array(
-			'perihal' => $this->input->post('perihal'),
-			'ruangan_meeting' => $this->input->post('ruangan_meeting'),
-			'tanggal' => $this->input->post('tanggal'),
-			'waktu_mulai' => $this->input->post('waktu_mulai'),
-			'waktu_selesai' => $this->input->post('waktu_selesai'),
-			'estimasi_peserta' => $this->input->post('estimasi_peserta'),
-			'PIC' => $this->input->post('pic ')
+	public function do_tambah(){	
+		$perihal= $this->input->post('perihal');
+		$ruangan_meeting = $this->input->post('ruangan');
+		$tanggal = $this->input->post('tanggal');
+		$waktu_mulai = $this->input->post('waktu_mulai');
+		$waktu_selesai = $this->input->post('waktu_selesai');
+		$estimasi_peserta = $this->input->post('estimasi_peserta');
+		$pic = $this->input->post('pic');
+		$pengguna = $this->input->post('pengguna_meetings');
+		
+		//$result = $this->cek_meeting($tanggal,$waktu_mulai,$waktu_selesai,$ruangan_meeting);
+		$result=true;
+		if ($result==false){
+			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				<span><strong>Gagal menambah meeting karena bentrok!
+				</div>';
+			$this->session->set_flashdata('alert', $alert);
+			redirect('Divisi/tambahmeeting');
+		}else{
+			$id_divisi = $this->session->userdata('id_user');
+			$data=array(
+				'perihal' => $perihal,
+				'ruangan_meeting' => $ruangan_meeting,
+				'tanggal' => $tanggal,
+				'waktu_mulai' => $waktu_mulai,
+				'waktu_selesai' => $waktu_selesai,
+				'estimasi_peserta' => $estimasi_peserta,
+				'PIC' => $pic,
+				'divisi_meeting'=>$id_divisi
 			);
-		$this->Meeting_model->insertmeeting();
+
+			//create meeting
+			$result2 = $this->Meeting_model->insert($data);
+
+			//search id_meeting
+			$meeting = $this->Meeting_model->search();
+
+			//input meeting
+			foreach ($pengguna as $each_pengguna): {
+				$data3 = array(
+					'anggota_divisi_meeting'=>$each_pengguna,
+					'meeting_anggota'=>$meeting['id_meeting']
+				);
+				$this->Anggotameeting_model->insert($data3);
+			}
+			endforeach;
+			redirect('Divisi');
+		}
+	}
+
+	function cek_meeting($tanggal,$jam_mulai,$jam_selesai,$id_ruangan){
+		$result1 = $this->Meeting_model->cek_meeting($tanggal,$id_ruangan);
+		if ($result1 == null){
+			return true;
+		}else{
+			$penanda = 0;
+			foreach ($result1 as $result) {
+				if ($result['jam_mulai']>=$jam_mulai){
+					if($result['jam_selesai']<$jam_mulai){
+						$penanda = $penanda + 1;
+					}
+				}else{
+					if($result['jam_mulai']<$jam_selesai){
+						$penanda = $penanda + 1;
+					}
+				}
+			}
+			if ($penanda>0){
+				return false;
+			}else{
+				return true;
+			}
+		}
 	}
 }
                                                               
