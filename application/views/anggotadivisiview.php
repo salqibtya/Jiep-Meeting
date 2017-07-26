@@ -3,7 +3,7 @@
 <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
  <div class="main_container">
  <?php $this->load->view('templates/menubar'); ?>
-
+ <?php $this->session->flashdata('alert');?>
  <div class="col-md-12" style="background-color: rgb(247,247,247)">
     <h4 style="text-align: center;"> Daftar Anggota Divisi </h4>
  </div>
@@ -36,10 +36,10 @@
                   </div>
                   <div class="modal-body">
                    <label class="col-sm-12  control-label" for="sm" style="color: black">Nama Anggota</label>
-                   <input class="form-control" type="text" name="nama_anggota" id="sm" style="color: black">
+                   <input class="form-control" type="text" name="nama_anggota" id="sm" style="color: black" required="true">
                    <br>
                    <label class="col-sm-12  control-label" for="sm" style="color: black">Email Anggota</label>
-                   <input class="form-control" type="text" name="email_anggota"  min="0" id="sm" style="color: black">
+                   <input class="form-control" type="text" name="email_anggota"  min="0" id="sm" style="color: black" required="true">
                   </div>
                   <div class="modal-footer">
                      <button type="submit" class="btn btn-primary">Tambah</button>

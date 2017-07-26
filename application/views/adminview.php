@@ -42,10 +42,10 @@
                   </div>
                   <div class="modal-body">
                    <label class="col-sm-2  control-label" for="sm" style="color: black">Nama Ruangan</label>
-                   <input class="form-control" type="text" name="nama_ruangan" id="sm" style="color: black">
+                   <input class="form-control" type="text" name="nama_ruangan" required="true" id="sm" style="color: black">
 
                     <label class="col-sm-2  control-label" for="sm" style="color: black">Kapasitas</label>
-                   <input class="form-control" type="number" name="kapasitas_ruangan"  min="0" id="sm" style="color: black">
+                   <input class="form-control" type="number" name="kapasitas_ruangan"  required="true"  min="0" id="sm" style="color: black">
                   </div>
                   <div class="modal-footer">
                      <button type="submit" class="btn btn-primary">Tambah</button>
@@ -104,15 +104,15 @@
                 </div>
                 <div class="modal-body">
                   <label class="col-sm-2  control-label"  for="sm" style="color: black">Nama Divisi</label>
-                  <input class="form-control" type="text" name="nama_divisi" id="sm" style="color: black">
+                  <input class="form-control"  required="true"  type="text" name="nama_divisi" id="sm" style="color: black">
 
                   
                   <label class="col-sm-2  control-label"  for="sm" style="color: black">Username </label>
-                  <input class="form-control" type="text" name="username_divisi" name="" id="sm" style="color: black">'
+                  <input class="form-control" type="text" name="username_divisi" required="true"  id="sm" style="color: black">'
                   '
                   
                   <label class="col-sm-2  control-label" for="sm" style="color: black">Password</label>
-                  <input class="form-control" type="text" name="password" id="sm" style="color: black">
+                  <input class="form-control" type="text" name="password" id="sm" required="true" style="color: black">
                 </div>
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-primary">Tambah</button>

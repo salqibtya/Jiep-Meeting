@@ -23,7 +23,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Perihal</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" placeholder="perihal" name="perihal" class="form-control col-md-7 col-xs-12">
+								<input type="text" required="true"  placeholder="perihal" name="perihal" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
@@ -41,43 +41,45 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="date" placeholder="dd/mm/yyyy" name="tanggal" class="form-control col-md-7 col-xs-12">
+								<input type="date" required="true"  placeholder="dd/mm/yyyy" name="tanggal" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Jam mulai</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="time" placeholder="hh:mm" name="waktu_mulai" class="form-control col-md-7 col-xs-12">
-							</div>
+								<input type="time" placeholder="hh:mm" required="true"  name="waktu_mulai" class="form-control col-md-7 col-xs-12">
+								</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Jam selesai</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="time" placeholder="hh:mm" name="waktu_selesai" class="form-control col-md-7 col-xs-12">
+								<input type="time" required="true"  placeholder="hh:mm" name="waktu_selesai" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Peserta</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<select id="pengguna_meetings" name="pengguna_meetings" class="form-control" required>
-									<option value="">-- pilih Peserta --</option>
+								<select  name="pengguna_meetings[]" class="inputpeserta" multiple="multiple" required>
+								<?php foreach($anggotas as $anggota_item):?>
+									<option value="<?=$anggota_item['id_anggota']?>"><?=$anggota_item['nama']?> - <?=$anggota_item['nama_divisi']?></option>
+									<?php endforeach?>
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Estimasi peserta</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="number" placeholder="estimasi peserta" name="estimasi_peserta" class="form-control col-md-7 col-xs-12">
+								<input type="number"  required="true" placeholder="estimasi peserta" name="estimasi_peserta" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">PIC</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
-								<input type="text" placeholder="PIC" name="pic" class="form-control col-md-7 col-xs-12">
+								<input type="text" placeholder="PIC" name="pic"  required="true" class="form-control col-md-7 col-xs-12">
 							</div>
 						</div>
 
@@ -92,4 +94,7 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+$(".inputpeserta").select2();
+</script>
 </body> 

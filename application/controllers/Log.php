@@ -20,6 +20,12 @@ class Log extends CI_Controller {
 			if ($result == FALSE){
 				$result2 = $this->Divisi_model->get_divisi_login($username,$password);
 				if($result2 == FALSE){
+					$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				<span><strong>Perhatian!</strong> Username atau password salah.
+				</div>';
+					$this->session->set_flashdata('alert', $alert);
 					$this->load->view('logview');
 				}else{
 					$session_data = array(

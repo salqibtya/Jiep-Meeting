@@ -9,8 +9,6 @@ class Divisi extends CI_Controller
 		$this->load->model('Divisi_model');
 		$this->load->model('Anggotadivisi_model');
 		$this->load->model('Ruangan_model');
-
-		
 	}
 
 	public function index(){
@@ -41,6 +39,17 @@ class Divisi extends CI_Controller
 	}
 
 	public function tambahanggota(){
+		$this->form_validation->set_rules('nama_anggota','Nama',required);
+		$this->form_validation->set_rules('email_anggota','email','required|valid_email');
+		if ($this->form_validation->run()==FALSE){
+			redirect('Divisi/anggotadivisi');
+			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				<span><strong>username diisi dengan username, dan email di isi dengan format email.
+				</div>';
+				$this->session->set_flashdata('alert', $alert);
+		}
 		$data = array(
 			'nama'=>$this->input->post('nama_anggota'),
 			'email'=>$this->input->post('email_anggota'),
@@ -53,6 +62,7 @@ class Divisi extends CI_Controller
 	public function tambahmeeting(){
 		$data['title'] = "Tambah Meeting";
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
+		$data['anggotas'] = $this->Anggotadivisi_model->get_all();
 		$this->load->view('templates/header',$data);
 		$this->load->view('tambahmeetingview', $data);
 		$this->load->view('templates/footer');
