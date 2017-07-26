@@ -76,8 +76,9 @@ class Divisi extends CI_Controller
 			'waktu_mulai' => $this->input->post('waktu_mulai'),
 			'waktu_selesai' => $this->input->post('waktu_selesai'),
 			'estimasi_peserta' => $this->input->post('estimasi_peserta'),
-			'PIC' => $this->input->post('pic')
+			'PIC' => $this->input->post('pic ')
 			);
-	}                                                              
-
-}	
+		$this->Meeting_model->insertmeeting();
+	}
+}
+                                                              
