@@ -1,4 +1,4 @@
-<<nav class="navbar-collapse">
+<!--<<nav class="navbar-collapse">
 	<div class="" role="tabpanel" data-example-id="togglable-tabs">
       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
         <li role="presentation" class="active"><a href="<?=base_url('Divisi')?>" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">My Meeting</a>
@@ -18,15 +18,15 @@
     	</div>
     </div>
     </div>
-</nav>
-<!-- <nav class="navbar-collapse ">
+</nav>-->
+ <nav class="navbar-collapse ">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?=base_url('Divisi')?>">My Meeting</a></li>
         <li class="active"><a href="<?=base_url('Divisi/meeting')?>">Meeting</a></li>
         <li class="active"><a href="<?=base_url('Divisi/anggotadivisi')?>">Anggota</a></li>
         </ul>
    </nav>
-
+<!--
 <nav class="navbar-collapse" role="tabpanel" data-example-id="togglable-tabs">
    <ul id="myTab" class="nav navbar-nav nav-tabs bar_tabs" role="tablist">
 	<li role="presentation" class="active"><a href="<?=base_url('Divisi')?>" role="tab" id="mymeeting" data-toggle="tab" aria-expanded="true">My Meeting</a>
