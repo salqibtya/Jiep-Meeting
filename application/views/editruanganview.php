@@ -3,16 +3,14 @@
 <div class="right_col" role="main" style="margin-left:0px!important">
 	<div class="page-title">
 		<div class="title_left">
+		<h3><a href="<?=base_url()?>/Admin"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
+		<div class="clearfix"></div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
-		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">				
+		<div class="row">		
 				<div class="x_panel">
-					<div class="x_title">
-						<h3><a href="<?=base_url()?>/Admin"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
-						<div class="clearfix"></div>
-					</div>
+				<div class="">
 					<?=form_open('/Admin/do_edit')?>
 					<div class="x_content">
 						
@@ -47,7 +45,7 @@
 					</div>
 					<?=form_close()?>
 				</div>
-			</div>
+				</div>
 		</div>
 	</div>
 </div>

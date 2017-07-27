@@ -21,8 +21,7 @@
      <div class="x_content">
       <div class="col-md-6">
        <div class="table-responsive">
-        <table class="table table-striped table-bordered jambo_table bulk_act
-        ion">
+       <table class="table table-striped jambo_table bulk_action">
         <thead>
          <tr class="headings">
           <th style="text-align:center">Nomor</th>
@@ -55,25 +54,22 @@
              </div>
            </div>
            <?=form_close()?>
-         </div>
-         <!-- modal for add room-->
-         <?=form_close()?>
-       </div>
-     </th>
-   </tr>
- </thead>
+         </th>
+       </tr>
+     </thead>
+   </div>
 
- <tbody>
-  <?php 
-  $number = 1;
-  foreach($ruangans as $ruangan_item):
-    ?>
-  <tr>
-    <td style="text-align:center"><?php echo $number;$number = $number+1;?></td>
-    <td style="text-align:center"><?= $ruangan_item['nama_ruangan']?></td>
-    <td style="text-align:center"><?= $ruangan_item['kapasitas_ruangan']?></td>     
-    <td style="text-align:center;width:100px">
-      <a href="<?php echo base_url(); ?>Admin/editruangan/<?php echo $ruangan_item['id_ruangan'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+   <tbody>
+    <?php 
+    $number = 1;
+    foreach($ruangans as $ruangan_item):
+      ?>
+    <tr>
+      <td style="text-align:center"><?php echo $number;$number = $number+1;?></td>
+      <td style="text-align:center"><?= $ruangan_item['nama_ruangan']?></td>
+      <td style="text-align:center"><?= $ruangan_item['kapasitas_ruangan']?></td>     
+      <td style="text-align:center;width:100px">
+        <a href="<?php echo base_url(); ?>Admin/editruangan/<?php echo $ruangan_item['id_ruangan'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
       <!-- button hapus 
       <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>admin/deleteruangan/<?php echo $ruangan_item['id_ruangan'];?>"><i class="fa fa-trash-o"></i></a>
     -->
@@ -114,25 +110,28 @@
                 <label class="col-sm-12  control-label" for="sm" style="color: black">Password</label>
                 <input class="form-control" type="text" name="password" id="sm" required="true" style="color: black">
               </div>
-            </div>
-          </div>
-        </div>
-        <?= form_close() ?>
-      </th>
-    </tr>
-  </thead>
+              <div class="modal-footer">
+               <button type="submit" class="btn btn-primary">Tambah</button>
+             </div>
+           </div>
+         </div>
+       </div>
+       <?= form_close() ?>
+     </th>
+   </tr>
+ </thead>
 
-  <tbody>
-    <?php
-    $number =1;
-    foreach ($divisis as $divisi_item):?>
+ <tbody>
+  <?php
+  $number =1;
+  foreach ($divisis as $divisi_item):?>
 
-    <tr>
-      <td style="text-align:center"><?php echo $number; $number=$number+1;?></td>
-      <td style="text-align:center"><?=$divisi_item['nama_divisi']?></td>
-      <td style="text-align:center"><?=$divisi_item['username_divisi']?></td>
-      <td style="text-align:center;width:100px">
-        <a href="<?php echo base_url(); ?>Admin/editdivisi/<?php echo $divisi_item['id_divisi'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+  <tr>
+    <td style="text-align:center"><?php echo $number; $number=$number+1;?></td>
+    <td style="text-align:center"><?=$divisi_item['nama_divisi']?></td>
+    <td style="text-align:center"><?=$divisi_item['username_divisi']?></td>
+    <td style="text-align:center;width:100px">
+      <a href="<?php echo base_url(); ?>Admin/editdivisi/<?php echo $divisi_item['id_divisi'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
         <!-- button hapus 
         <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>admin/deletedivisi/<?php echo $divisi_item['id_divisi'];?>"><i class="fa fa-trash-o"></i></a>
       -->
@@ -141,8 +140,6 @@
 <?php endforeach?>
 </tbody>
 </table>
-</div>
-</div>
 </div>
 </div>
 </div>
