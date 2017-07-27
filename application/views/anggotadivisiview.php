@@ -6,7 +6,7 @@
 
      <div class="col-md-12" style="background-color: rgb(247,247,247)">
     </div>
-    <div class="row">
+    
       <div class="col-md-12 col-sm-12 col-xs-12">
        <div class="x_panel">
         <div class="x_content">
@@ -58,13 +58,13 @@
               <td style="text-align:center"><?=$anggota_item['nama']?></td>
               <td style="text-align:center"><?=$anggota_item['email']?></td>     
               <td style="text-align:center;width:100px">
-                <a href="<?php echo base_url();?>Divisi/anggotadivisiview/<?php echo $anggota_item['id_anggota'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+                <a href="<?php echo base_url();?>Divisi/editanggota/<?php echo $anggota_item['id_anggota'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
               </td>
             </tr>
           <?php endforeach?>
         </tbody>
       </table>
-    </div>
+    
   </div>
 </div>
 </div>

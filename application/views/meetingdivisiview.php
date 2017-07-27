@@ -4,7 +4,7 @@
  <div class="main_container">
  <?php $this->load->view('templates/menubar'); ?>
   <div class="right_col" role="main" style="margin-left:0px !important">
-    <div class="row">
+   
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_content">
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
   </div>
 </body>
 <!-- home content -->

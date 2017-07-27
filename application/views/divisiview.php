@@ -4,7 +4,7 @@
    <div class="main_container">
      <?php $this->load->view('templates/menubar'); ?>
      <div class="right_col" role="main" style="margin-left:0px !important">
-      <div class="row">
+      
         <div class="col-md-12 col-sm-12 col-xs-12">
          <!-- <a ><i class="fa fa-user-plus">Tambah</i></a>-->
          <div class="x_panel">
@@ -37,7 +37,7 @@
 
         </div>
       </div>
-    </div>
+    
   </div>
 </div> 
   <a href="<?=base_url('Divisi/tambahmeeting')?>" class="btn-floating btn-large blue" style="color: rgb(63,83,103); position:fixed; bottom: 60px; right: 35px !important"><i class="glyphicon glyphicon-plus-sign fa-4x" ></i></a>

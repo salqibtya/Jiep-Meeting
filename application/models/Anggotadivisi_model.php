@@ -28,7 +28,6 @@ class Anggotadivisi_model extends CI_Model{
 		$this->db->where('id_anggota',$id_anggota);
 		return $this->db->get('anggota_divisi')->result_array();
 	}
-
 	public function updateanggota($id_anggota, $data) {
         $this->db->set($data);
         $this->db->where('id_anggota',$id_anggota);
