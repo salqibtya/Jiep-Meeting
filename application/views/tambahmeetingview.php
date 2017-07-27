@@ -1,6 +1,6 @@
 <body style="background-color:rgb(247,247,247) ">
 	<div class="right_col" role="main" style="margin-left:0px!important">
-		<?=$this->session->flashdata('notification')?>
+		<?=$this->session->flashdata('alert')?>
 		<div class="page-title">
 			<div class="title-right" style="background-color: rgb(247,247,247)">   
 			</div>
@@ -18,8 +18,8 @@
 				<div class="x_content">
 
 					<br>
-
-					<div class="form-horizontal form-label-left">						
+					<?=form_open('Divisi/do_tambah')?>
+					<div class="form-horizontal form-label-left">					
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Perihal</label>
 							<div class="col-md-6 col-sm-6 col-xs-12">
@@ -84,13 +84,14 @@
 						</div>
 
 						<div class="ln_solid"></div>
-						<div class="form-group">
+							<div class="form-group">
 							<div class="col-md-7 col-xs-12 col-md-offset-8">
 								<button type="submit" class="btn btn-success">Submit</button>
 							</div>
+							</div>
 						</div>
 					</div>
-				</div>
+					<?=form_close()?>
 			</div>
 		</div>
 	</div>

@@ -29,4 +29,21 @@ class Meeting_model extends CI_Model{
 		$this->db->where($array);
 		return $this->db->get('meeting')->result_array();
 	}
+
+	function cek_meeting($tanggal,$id_ruangan){
+		$array=array('tanggal'=>$tanggal,'ruangan_meeting'=>$id_ruangan);
+		$this->db->where($array);
+		return $this->db->get('meeting')->result_array();
+	}
+
+	function insert($data){
+		$this->db->insert('meeting',$data);
+		return ($this->db->affected_rows() != 1) ? false : true;
+	}
+
+	function search(){
+		$this->db->select_max('id_meeting');
+		$result = $this->db->get('meeting');
+		return $result->id_meeting;
+	}
 }
