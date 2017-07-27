@@ -145,5 +145,40 @@ class Divisi extends CI_Controller
 			}
 		}
 	}
+
+	public function editanggota($id_anggota){
+		$data['title'] ="Edit Anggota";
+		$data['anggotas'] = $this->Anggotadivisi_model->getoneanggota($id_anggota);
+		$this->load->view('templates/header',$data);
+		$this->load->view('editanggotaview',$data); //isi sesuai keinginan
+		$this->load->view('templates/footer');
+	}
+
+	public function do_editanggota($id_anggota){
+		$id_anggota  = $this->input->post('id');
+		$data = array(
+			'nama_anggota'=>$this->input->post('nama_anggota'),
+			'email_anggota'=>$this->input->post('email_anggota')
+		);
+		$result = $this->Anggotadivisi_model->update($id_anggota,$data);
+		if ($result) {
+			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			Anggota telah berhasil diubah.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		} else {
+			$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Pengubahan anggota ruangan gagal.
+			</div>';
+
+			$this->session->set_flashdata('notification', $notification);
+		}
+		redirect('Divisi');
+	}
+
 }
                                                               
