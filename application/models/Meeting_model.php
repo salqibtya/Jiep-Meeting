@@ -42,8 +42,10 @@ class Meeting_model extends CI_Model{
 	}
 
 	function search(){
-		$this->db->select_max('id_meeting');
-		$result = $this->db->get('meeting');
-		return $result->id_meeting;
+		$last = $this->db->order_by('id_meeting','desc')
+						 ->limit(1)
+						 ->get('meeting')
+						 ->row_array();
+		return $last;
 	}
 }

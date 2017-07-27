@@ -115,9 +115,8 @@ class Divisi extends CI_Controller
 		$pic = $this->input->post('pic');
 		$pengguna = $this->input->post('pengguna_meetings');
 		
-		//$result = $this->cek_meeting($tanggal,$waktu_mulai,$waktu_selesai,$ruangan_meeting);
-		$result=true;
-		if ($result==false){
+		$result = $this->cek_meeting($tanggal,$waktu_mulai,$waktu_selesai,$ruangan_meeting);
+		if ($result!=true){
 			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 				</button>
@@ -146,11 +145,11 @@ class Divisi extends CI_Controller
 
 			//input meeting
 			foreach ($pengguna as $each_pengguna): {
-				$data3 = array(
+				$data2 = array(
 					'anggota_divisi_meeting'=>$each_pengguna,
 					'meeting_anggota'=>$meeting['id_meeting']
 				);
-				$this->Anggotameeting_model->insert($data3);
+				$this->Anggotameeting_model->insert($data2);
 			}
 			endforeach;
 			redirect('Divisi');
@@ -159,17 +158,17 @@ class Divisi extends CI_Controller
 
 	function cek_meeting($tanggal,$jam_mulai,$jam_selesai,$id_ruangan){
 		$result1 = $this->Meeting_model->cek_meeting($tanggal,$id_ruangan);
-		if ($result1 == null){
+				if ($result1 == null){
 			return true;
 		}else{
 			$penanda = 0;
 			foreach ($result1 as $result) {
-				if ($result['jam_mulai']>=$jam_mulai){
-					if($result['jam_selesai']<$jam_mulai){
+				if ($result['jam_mulai']>$jam_mulai){
+					if($result['jam_mulai']<=$jam_selesai){
 						$penanda = $penanda + 1;
 					}
 				}else{
-					if($result['jam_mulai']<$jam_selesai){
+					if($result['jam_selesai']<=$jam_mulai){
 						$penanda = $penanda + 1;
 					}
 				}
