@@ -1,27 +1,7 @@
- <nav class="navbar-collapse ">
+ <nav class="navbar-collapse">
       <ul id="myTab" class="nav navbar-nav bar_tabs" role="tablist">
         <li class="active"><a href="<?=base_url('Divisi')?>">My Meeting</a></li>
         <li class="active"><a href="<?=base_url('Divisi/meeting')?>">Meeting</a></li>
         <li class="active"><a href="<?=base_url('Divisi/anggotadivisi')?>">Anggota</a></li>
         </ul>
    </nav>
-<!--
-<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Home</a>
-                        </li>
-                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
-                        </li>
-                        <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Profile</a>
-                        </li>
-                      </ul>
-                      <div id="myTabContent" class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                          <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. </p>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                          <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. </p>
-                        </div>
-                      </div>-->
