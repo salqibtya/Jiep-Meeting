@@ -168,10 +168,12 @@ class Admin extends CI_Controller
 
 	public function do_editdivisi($id_divisi){
 		$id_divisi  = $this->input->post('id');
+		$temp = $this->input->post('password_divisi');
+		$password = $this->bcrypt->hash_password($temp);
 		$data = array(
 			'nama_divisi'=>$this->input->post('nama_divisi'),
 			'username_divisi'=>$this->input->post('username_divisi'),
-			'password_divisi'=>$this->input->post('password_divisi')
+			'password_divisi'=>$password
 		);
 		$result = $this->Divisi_model->updatedivisi($id_divisi,$data);
 		if ($result) {

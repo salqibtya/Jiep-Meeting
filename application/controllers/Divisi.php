@@ -81,15 +81,7 @@ class Divisi extends CI_Controller
 		$pengguna = $this->input->post('pengguna_meetings');
 		
 		$result = $this->cek_meeting($tanggal,$waktu_mulai,$waktu_selesai,$ruangan_meeting);
-		if ($result!=true){
-			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-				</button>
-				<span><strong>Gagal menambah meeting karena bentrok!
-				</div>';
-			$this->session->set_flashdata('alert', $alert);
-			redirect('Divisi/tambahmeeting');
-		}else{
+		if ($result){
 			$id_divisi = $this->session->userdata('id_user');
 			$data=array(
 				'perihal' => $perihal,
@@ -118,31 +110,44 @@ class Divisi extends CI_Controller
 			}
 			endforeach;
 			redirect('Divisi');
+		}else{
+			$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				<span><strong>Gagal menambah meeting karena bentrok!
+				</div>';
+			$this->session->set_flashdata('alert', $alert);
+			redirect('Divisi/tambahmeeting');
 		}
 	}
 
 	function cek_meeting($tanggal,$jam_mulai,$jam_selesai,$id_ruangan){
 		$result1 = $this->Meeting_model->cek_meeting($tanggal,$id_ruangan);
-				if ($result1 == null){
+		foreach ($result1 as $key => $value) {
+			echo $key.' '.$value['tanggal'].' '.$value['waktu_mulai'].' '.$value['waktu_selesai'].' '.$value['perihal'].'<br>';
+		}
+		$penanda = 0;
+		echo $penanda.'<br>';
+		foreach ($result1 as $value){
+			if ($value['waktu_mulai']>$jam_mulai){
+				if ($value['waktu_mulai']<$jam_selesai){
+					$penanda = $penanda + 1;
+					echo $value['perihal'].'case 1 <br>';
+				}
+			}else if($value['waktu_mulai']<$jam_mulai){
+				if ($value['waktu_selesai']>$jam_mulai){
+					$penanda = $penanda + 1;
+					echo $value['perihal'].'case 2 <br>';
+				}
+			}else{
+				$pananda  = $penanda + 1;
+				echo 'laaah <br>';
+			}
+		}
+		if ($penanda==0){
 			return true;
 		}else{
-			$penanda = 0;
-			foreach ($result1 as $result) {
-				if ($result['jam_mulai']>$jam_mulai){
-					if($result['jam_mulai']<=$jam_selesai){
-						$penanda = $penanda + 1;
-					}
-				}else{
-					if($result['jam_selesai']<=$jam_mulai){
-						$penanda = $penanda + 1;
-					}
-				}
-			}
-			if ($penanda>0){
-				return false;
-			}else{
-				return true;
-			}
+			return false;
 		}
 	}
 
