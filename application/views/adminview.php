@@ -15,12 +15,11 @@
 
  <div class="clearfix"></div>
 
- <div class="row">
-   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-     <div class="x_content">
-      <div class="col-md-6">
-       <div class="table-responsive">
+ <div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+   <div class="x_content">
+    <div class="col-md-6">
+     <div class="table-responsive">
        <table class="table table-striped jambo_table bulk_action">
         <thead>
          <tr class="headings">
@@ -29,7 +28,7 @@
           <th style="text-align:center">Kapasitas</th>
           <th style="text-align:center;width:100px">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></button>
-            
+
             <!-- modal for add room--> 
             <?=form_open('/Admin/insertruangan')?>
             <div class="modal fade" id="myModal" role="dialog">
@@ -116,7 +115,7 @@
            </div>
          </div>
        </div>
-       <?= form_close() ?>
+       <?= form_close()?>
      </th>
    </tr>
  </thead>
