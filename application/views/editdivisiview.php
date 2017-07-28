@@ -38,7 +38,7 @@
 								<div class="form-group col-md-12">
 									<label class="control-label col-md-3 col-sm-3 col-xs-12">Password Divisi</label>
 									<div class="col-md-6 col-sm-6 col-xs-12">
-										<input type="text" name="password_divisi" class="form-control" value="<?=$divisi_item['password_divisi']?>">
+									<input type="text" name="password_divisi" class="form-control" placeholder="isi Password baru" required>
 									</div>
 									<!-- untuk mengambil id -->
 									<input type="hidden" name="id" value="<?=$divisi_item['id_divisi']?>">
@@ -49,7 +49,7 @@
 							<div class="col-md-9 col-sm-6 col-xs-12">
 								<button type="submit" class="btn btn-success">Submit</button>
 							</div>
-							
+
 						</div>
 						<?=form_close()?>
 					</div>
