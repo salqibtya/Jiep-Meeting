@@ -1,5 +1,5 @@
 <!-- admin content -->
-<body style="background-color:rgb(247,247,247) ">
+<body style="background-color:rgb(247,247,247)">
 	<div class="page-title">
 		<div class="title_right" style="background-color: rgb(247,247,247)">
 			<h3><a href="<?=base_url()?>/Divisi/anggotadivisi"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
