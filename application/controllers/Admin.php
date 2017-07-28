@@ -29,6 +29,9 @@ class Admin extends CI_Controller
 	}
 
 	public function insertdivisi(){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$temp = $this->input->post('password');
 		$password = $this->bcrypt->hash_password($temp);
 		$data = array(
@@ -56,6 +59,9 @@ class Admin extends CI_Controller
 	}
 
 	public function insertruangan(){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$data = array(
 			'nama_ruangan'=>$this->input->post('nama_ruangan'),
 			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan')
@@ -80,6 +86,9 @@ class Admin extends CI_Controller
 	}
 
 	public function deleteruangan($id_ruangan){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$result = $this->Ruangan_model->delete($id_ruangan);
 		// notification
 		if ($result) {
@@ -102,6 +111,9 @@ class Admin extends CI_Controller
 	}
 
 	public function deletedivisi($id_divisi){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$result = $this->Divisi_model->delete($id_divisi 	);
 		// notification
 		if ($result) {
@@ -124,6 +136,9 @@ class Admin extends CI_Controller
 	}
 
 	public function editruangan($id_ruangan){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$data['title'] ="Edit Ruangan";
 		$data['ruangans'] = $this->Ruangan_model->getoneruangan($id_ruangan);
 		$this->load->view('templates/header',$data);
@@ -132,6 +147,9 @@ class Admin extends CI_Controller
 	}
 
 	public function do_edit($id_ruangan){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$id_ruangan  = $this->input->post('id');
 		$data = array(
 			'nama_ruangan'=>$this->input->post('nama_ruangan'),
@@ -158,6 +176,9 @@ class Admin extends CI_Controller
 	}
 
 	public function editdivisi($id_divisi){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$data['title'] = "Edit Divisi";
 		$data['divisis'] = $this->Divisi_model->getonedivisi($id_divisi);
 		$this->load->view('templates/header', $data);
@@ -167,6 +188,9 @@ class Admin extends CI_Controller
 	}
 
 	public function do_editdivisi($id_divisi){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
 		$id_divisi  = $this->input->post('id');
 		$temp = $this->input->post('password_divisi');
 		$password = $this->bcrypt->hash_password($temp);

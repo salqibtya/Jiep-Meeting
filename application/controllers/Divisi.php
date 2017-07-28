@@ -14,6 +14,9 @@ class Divisi extends CI_Controller
 	}
 
 	public function index(){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$data['title'] = 'My Meeting';
 		$data['meetings'] = $this->Meeting_model->get_one_divisi();
 		$this->load->view('templates/header',$data);
@@ -23,6 +26,9 @@ class Divisi extends CI_Controller
 
 	public function meeting()
 	{
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$data['title'] = 'Divisi'; 
 		$data['meetings'] = $this->Meeting_model->get_all(); 
 	
@@ -32,6 +38,9 @@ class Divisi extends CI_Controller
 	}
 
 	public function anggotadivisi(){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$data['title'] = 'Anggota Divisi';
 		$data['anggotas'] = $this->Anggotadivisi_model->get_all_anggota();
 
@@ -42,6 +51,9 @@ class Divisi extends CI_Controller
 	}
 
 	public function tambahanggota(){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$this->form_validation->set_rules('nama_anggota','Nama',required);
 		$this->form_validation->set_rules('email_anggota','email','required|valid_email');
 		if ($this->form_validation->run()==FALSE){
@@ -63,6 +75,9 @@ class Divisi extends CI_Controller
 	}
 
 	public function editanggota($id_anggota){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$data['title'] ="Edit Anggota";
 		$data['anggotas'] = $this->Anggotadivisi_model->getoneanggota($id_anggota);
 		$this->load->view('templates/header',$data);
@@ -71,6 +86,9 @@ class Divisi extends CI_Controller
 	}
 
 	public function do_editanggota($id_anggota){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$id_anggota  = $this->input->post('id');
 		$data = array(
 			'nama_anggota'=>$this->input->post('nama_anggota'),
@@ -97,6 +115,9 @@ class Divisi extends CI_Controller
 	}
    
 	public function tambahmeeting(){
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$data['title'] = "Tambah Meeting";
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 		$data['anggotas'] = $this->Anggotadivisi_model->get_all();
@@ -106,6 +127,9 @@ class Divisi extends CI_Controller
 	}   
 
 	public function do_tambah(){	
+		if(!isset($_SESSION['id_user'])){
+			redirect('');
+		}
 		$perihal= $this->input->post('perihal');
 		$ruangan_meeting = $this->input->post('ruangan');
 		$tanggal = $this->input->post('tanggal');
