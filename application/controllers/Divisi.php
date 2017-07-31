@@ -111,7 +111,7 @@ class Divisi extends CI_Controller
 
 	$this->session->set_flashdata('notification', $notification);
 }
-redirect('Admin');
+redirect('Divisi');
 }
 
 public function tambahmeeting(){
@@ -186,24 +186,24 @@ public function editmeeting($id_meeting){
 	}
 	$data['title'] ="Edit Meeting";
 	$data['meetings'] = $this->Meeting_model->getonemeeting($id_meeting);
+	$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 	$this->load->view('templates/header',$data);
 	$this->load->view('editmeetingview',$data); //isi sesuai keinginan
 	$this->load->view('templates/footer');
 }
 
-public function do_editmeeting($id_meeting){
-	if($_SESSION['status']!='id_user'){
-		redirect('');
-	}
+public function do_editmeeting(){
 	$id_meeting  = $this->input->post('id');
+	$id_divisi = $_SESSION['id_user'];
+	echo $id_meeting;
 	$data = array(
-		'perihal' => $perihal,
-		'ruangan_meeting' => $ruangan_meeting,
-		'tanggal' => $tanggal,
-		'waktu_mulai' => $waktu_mulai,
-		'waktu_selesai' => $waktu_selesai,
-		'estimasi_peserta' => $estimasi_peserta,
-		'PIC' => $pic,
+		'perihal' => $this->input->post('perihal'),
+		'ruangan_meeting' => $this->input->post('ruangan'),
+		'tanggal' => $this->input->post('tanggal'),
+		'waktu_mulai' => $this->input->post('waktu_mulai'),
+		'waktu_selesai' => $this->input->post('waktu_selesai'),
+		'estimasi_peserta' => $this->input->post('estimasi_peserta'),
+		'PIC' => $this->input->post('pic'),
 		'divisi_meeting'=>$id_divisi
 		);
 
@@ -212,19 +212,16 @@ public function do_editmeeting($id_meeting){
 		$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 		Meeting telah berhasil diubah.
-	</div>';
-
-	$this->session->set_flashdata('notification', $notification);
-} else {
+		</div>';	
+	} else {
 	$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 	</button>
 	Pengubahan meeting gagal.
-</div>';
-
-$this->session->set_flashdata('notification', $notification);
-}
-redirect('Divisi');
+	</div>';
+	}
+	$this->session->set_flashdata('notification', $notification);
+	redirect('Divisi');
 }
 
 

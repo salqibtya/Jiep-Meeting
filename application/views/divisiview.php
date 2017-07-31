@@ -18,6 +18,7 @@
                   <th style="text-align:center">Jam Selesai</th>
                   <th style="text-align:center">Ruangan</th>
                   <th style="text-align:center">Perihal</th>
+                  <th style="text-align:center">Edit Meeting</th>
                 </tr>
               </thead>
               <tbody>
@@ -27,7 +28,8 @@
                     <td style="text-align:center"><?=$meetings_item['waktu_mulai']?></td>
                     <td style="text-align:center"><?=$meetings_item['waktu_selesai']?></td>
                     <td style="text-align:center"><?=$meetings_item['nama_ruangan']?></td>
-                    <td style="text-align:center;"><?=$meetings_item['perihal']?>
+                    <td style="text-align:center;"><?=$meetings_item['perihal']?></td>
+                    <td style="text-align:center;">
                       <a href="<?php echo base_url(); ?>Divisi/editmeeting/<?php echo $meetings_item['id_meeting'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
                     </td>
                   </tr>

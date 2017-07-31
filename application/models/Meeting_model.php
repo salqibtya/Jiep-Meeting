@@ -42,6 +42,7 @@ class Meeting_model extends CI_Model{
 
 	public function getonemeeting($id_meeting){	
 		$this->db->where('id_meeting',$id_meeting);
+		$this->db->join('ruangan', 'id_ruangan = ruangan_meeting');
 		return $this->db->get('meeting')->result_array();
 	}
 
