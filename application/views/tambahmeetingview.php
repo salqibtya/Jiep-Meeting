@@ -95,7 +95,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		<script type="text/javascript">
 			$(".inputpeserta").select2();
 		</script>
