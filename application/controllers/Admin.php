@@ -8,18 +8,19 @@ class Admin extends CI_Controller
 		$this->load->model('Ruangan_model');
 		$this->load->model('Divisi_model');
 		$this->load->model('Admin_model');
+		$this->load->model('Meeting_model');
 		
 	}
 
 	public function index()
 	{
-		$data['divisis'] = $this->Divisi_model->get_all_divisi(); 
-		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan(); 
+		$data['meetings'] = $this->Meeting_model->get_all_past();
+		
 
 		if($_SESSION['status']=="admin"){
 			$data['title'] = "Admin";
 			$this->load->view('templates/header',$data);
-			$this->load->view('adminview',$data);
+			$this->load->view('adminmeetingview',$data);
 			$this->load->view('templates/footer');
 			
 		}else{
@@ -218,6 +219,19 @@ class Admin extends CI_Controller
 		}
 		
 		redirect('Admin');
+	}
+
+	public function ruangdivisi(){
+		if($_SESSION['status']!='admin'){
+			redirect('');
+		}
+		$data['title'] = 'Ruangan dan Divisi';
+		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
+		$data['divisis'] = $this->Divisi_model->get_all_divisi();
+		$this->load->view('templates/header',$data);
+		$this->load->view('ruangdivisiview', $data);
+		$this->load->view('templates/footer');
 
 	}
+
 } 

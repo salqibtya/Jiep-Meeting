@@ -5,12 +5,12 @@
     <div class="right_col" role="main" style="margin-left:0px!important">
       <?=$this->session->flashdata('notification')?>
       <div class="page-title">
-       <div class="title-right" style="background-color: rgb(247,247,247)">   
-       <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center;"> Ruangan </h4>
+       <div class="title-right" style="background-color: rgb(247,247,247)">   <?php $this->load->view('templates/menubaradmin'); ?>
+       <!--<div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center;"> Ruangan </h4>
          </div>
 
          <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center"> Divisi </h4>
-         </div> 
+         </div> --> 
        </div>
      </div>
    </div>
@@ -19,7 +19,11 @@
 
    <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-     <div class="x_content">
+     <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center;"> Ruangan </h4>
+         </div>
+
+         <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center"> Divisi </h4>
+         </div><div class="x_content">
       <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="table-responsive">
          <table class="table table-striped table-bordered jambo_table bulk_action">

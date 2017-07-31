@@ -18,6 +18,16 @@ class Meeting_model extends CI_Model{
 		$this->db->where('tanggal >= CURDATE()');
 		return $this->db->get('meeting')->result_array();
 	}
+
+	public function get_all_past()
+	{
+		$this->db->order_by('tanggal', 'asc');
+		$this->db->order_by('waktu_mulai', 'asc');
+		$this->db->join('ruangan', 'id_ruangan = ruangan_meeting');
+		$this->db->join('divisi','id_divisi = divisi_meeting');
+		$this->db->where('tanggal < CURDATE()');
+		return $this->db->get('meeting')->result_array();
+	}
 	
 	public function get_one_divisi(){
 		$id_divisi = $this->session->userdata('id_user');
