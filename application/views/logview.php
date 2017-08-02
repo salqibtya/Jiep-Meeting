@@ -19,30 +19,30 @@
     <section class="login_content">
      <?= form_open('login') ?>
      <h1>Login Form</h1>
-    <div>
-     <input type="text" class="form-control" placeholder="Username" name="username" required="" />
-    </div>
-    <div>
-     <input type="password" class="form-control" placeholder="Password" name="userpass" required="" />
-    </div>
-    <div>
-     <button class="btn btn-default submit" type="submit">Masuk</button>
-    </div>
-    <?= $this->session->flashdata('alert') ?>
-    <div class="clearfix"></div>
-    <div class="separator">
-    <div class="clearfix"></div>
-    
-    <div>
-     <img src="./assets/img/jiepicon.png">
-     <h1>Meeting Information System</h1>
-     <p>©<?=date('Y')?> IT-JIEP. All Rights Reserved.</p>
-    </div>
-    </div>
-    <?= form_close() ?>
-   </section>
-  </div>
- </div>
+     <div>
+       <input type="text" class="form-control" placeholder="Username" name="username" required="" />
+     </div>
+     <div>
+       <input type="password" class="form-control" placeholder="Password" name="userpass" required="" />
+     </div>
+     <div>
+       <button class="btn btn-default submit" type="submit">Masuk</button>
+     </div>
+     <?= $this->session->flashdata('alert') ?>
+     <div class="clearfix"></div>
+     <div class="separator">
+      <div class="clearfix"></div>
+      
+      <div>
+       <img src="./assets/img/jiepicon.png">
+       <h1>Meeting Information System</h1>
+       <p>©<?=date('Y')?> IT-JIEP. All Rights Reserved.</p>
+     </div>
+   </div>
+   <?= form_close() ?>
+ </section>
+</div>
+</div>
 </div>
 </body>
 </html>

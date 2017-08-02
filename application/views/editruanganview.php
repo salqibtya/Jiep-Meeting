@@ -1,4 +1,3 @@
-<!-- admin content -->
 <body style="background-color:rgb(247,247,247) ">
 	<div class="col-md-12 col-sm-9 col-xs-12">
 		<div class="col-md-12 col-sm-9 col-xs-12">
@@ -39,10 +38,8 @@
 							</div>
 
 						<?php endforeach ?>
-						<div class="form-group">
-							<div class="col-md-9 col-sm-6 col-xs-12">
-								<button type="submit" class="btn btn-success">Submit</button>
-							</div>
+						<div class="form-group pull-right">
+							<button type="submit" class="btn btn-success">Submit</button>
 						</div>
 					</div>
 					<?=form_close()?>

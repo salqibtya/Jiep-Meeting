@@ -56,7 +56,7 @@ class Admin extends CI_Controller
 			</div>';
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('/Admin');		
+		redirect('/Admin/ruangdivisi');		
 	}
 
 	public function insertruangan(){
@@ -83,7 +83,7 @@ class Admin extends CI_Controller
 			</div>';
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('/Admin');
+		redirect('/Admin/ruangdivisi');
 	}
 
 	public function deleteruangan($id_ruangan){
@@ -173,7 +173,7 @@ class Admin extends CI_Controller
 
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('Admin');
+		redirect('Admin/ruangdivisi');
 	}
 
 	public function editdivisi($id_divisi){
@@ -218,7 +218,7 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('notification', $notification);
 		}
 		
-		redirect('Admin');
+		redirect('Admin/ruangdivisi');
 	}
 
 	public function ruangdivisi(){

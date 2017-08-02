@@ -85,7 +85,7 @@ class Divisi extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	public function do_editanggota($id_anggota){
+	public function do_editanggota(){
 		if(!isset($_SESSION['id_user'])){
 			redirect('');
 		}

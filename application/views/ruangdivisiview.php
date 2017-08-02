@@ -1,4 +1,3 @@
-<!-- admin content -->
 <body style="background-color:rgb(247,247,247) ">
  <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
    <div class="main_container">
@@ -6,11 +5,6 @@
       <?=$this->session->flashdata('notification')?>
       <div class="page-title">
        <div class="title-right" style="background-color: rgb(247,247,247)">   <?php $this->load->view('templates/menubaradmin'); ?>
-       <!--<div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center;"> Ruangan </h4>
-         </div>
-
-         <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center"> Divisi </h4>
-         </div> --> 
        </div>
      </div>
    </div>
@@ -20,11 +14,11 @@
    <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
      <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center;"> Ruangan </h4>
-         </div>
+     </div>
 
-         <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center"> Divisi </h4>
-         </div><div class="x_content">
-      <div class="col-md-6 col-sm-6 col-xs-12">
+     <div class="col-md-6 col-sm-6 col-xs-12" style="background-color: rgb(247,247,247)"> <h4 style="text-align: center"> Divisi </h4>
+     </div><div class="x_content">
+     <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="table-responsive">
          <table class="table table-striped table-bordered jambo_table bulk_action">
           <thead>
@@ -62,24 +56,22 @@
            </th>
          </tr>
        </thead>
-     </div>
 
-     <tbody>
-      <?php 
-      $number = 1;
-      foreach($ruangans as $ruangan_item):
-        ?>
-      <tr>
-        <td style="text-align:center"><?php echo $number;$number = $number+1;?></td>
-        <td style="text-align:center"><?= $ruangan_item['nama_ruangan']?></td>
-        <td style="text-align:center"><?= $ruangan_item['kapasitas_ruangan']?></td>     
-        <td style="text-align:center;width:100px">
-          <a href="<?php echo base_url(); ?>Admin/editruangan/<?php echo $ruangan_item['id_ruangan'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
+       <tbody>
+        <?php 
+        $number = 1;
+        foreach($ruangans as $ruangan_item):
+          ?>
+        <tr>
+          <td style="text-align:center"><?php echo $number;$number = $number+1;?></td>
+          <td style="text-align:center"><?= $ruangan_item['nama_ruangan']?></td>
+          <td style="text-align:center"><?= $ruangan_item['kapasitas_ruangan']?></td>     
+          <td style="text-align:center;width:100px">
+            <a href="<?php echo base_url(); ?>Admin/editruangan/<?php echo $ruangan_item['id_ruangan'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a></td>
       <!-- button hapus 
       <a class="btn btn-danger btn-xs" href="<?php echo base_url(); ?>admin/deleteruangan/<?php echo $ruangan_item['id_ruangan'];?>"><i class="fa fa-trash-o"></i></a>
     -->
-  </td>
-</tr>
+  </tr>
 <?php endforeach?>
 </tbody>
 </table>
@@ -88,7 +80,7 @@
 
 <div class="col-md-6 col-sm-6 col-xs-12">
   <div class="table-responsive">
-   <table class="table table-striped table-bordered jambo_table bulk_action">
+    <table class="table table-striped table-bordered jambo_table bulk_action">
      <thead>
        <tr class="headings">
         <th style="text-align:center">Nomor</th>
@@ -153,4 +145,3 @@
 </div>
 </div>
 </body>
-<!-- admin content -->

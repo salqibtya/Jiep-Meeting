@@ -1,4 +1,3 @@
-<!-- admin content -->
 <body style="background-color:rgb(247,247,247)">
 	<div class="col-md-12 col-sm-9 col-xs-12">
 		<div class="col-md-12 col-sm-9 col-xs-12">
@@ -13,10 +12,9 @@
 
 			<div class="clearfix"></div>
 			<div class="col-md-12 col-sm-12 col-xs-12">
-
 				<div class="x_panel">
 
-					<?form_open('/Divisi/do_editanggota')?>
+					<?=form_open('/Divisi/do_editanggota')?>
 					<div class="x_content">
 						<br>
 						<?php foreach ($anggotas as $anggota_item):?>
@@ -35,16 +33,18 @@
 									</div>
 									<input type="hidden" name="id" value="<?=$anggota_item['id_anggota']?>">
 								</div>
-
-							</div>
+							</div>	
 						<?php endforeach?>
-						<?form_close()?>
-						<div class="form-group">
-							<div class="col-md-9 col-sm-6 col-xs-12">
-								<button type="submit" class="btn btn-success">Submit</button>
-							</div>
+						
+						<div class="form-group pull-right">
+
+							<button type="submit" class="btn btn-success">Submit</button>
+							
 						</div>
 					</div>
+					<?=form_close()?>
 				</div>
 			</div>
-		</body> 
+		</div>
+	</div>
+</body> 
