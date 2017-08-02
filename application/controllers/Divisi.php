@@ -20,7 +20,7 @@ class Divisi extends CI_Controller
 		$data['title'] = 'My Meeting';
 		$data['meetings'] = $this->Meeting_model->get_one_divisi();
 		$this->load->view('templates/header',$data);
-		$this->load->view('divisiview',$data);
+		$this->load->view('divisi/divisiview',$data);
 		$this->load->view('templates/footer');
 	}
 
@@ -33,7 +33,7 @@ class Divisi extends CI_Controller
 		$data['meetings'] = $this->Meeting_model->get_all(); 
 
 		$this->load->view('templates/header',$data);
-		$this->load->view('meetingdivisiview', $data);
+		$this->load->view('divisi/meetingdivisiview', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -45,7 +45,7 @@ class Divisi extends CI_Controller
 		$data['anggotas'] = $this->Anggotadivisi_model->get_all_anggota();
 
 		$this->load->view('templates/header',$data);
-		$this->load->view('anggotadivisiview', $data);
+		$this->load->view('divisi/anggotadivisiview', $data);
 		$this->load->view('templates/footer');
 
 	}
@@ -81,7 +81,7 @@ class Divisi extends CI_Controller
 		$data['title'] ="Edit Anggota";
 		$data['anggotas'] = $this->Anggotadivisi_model->getoneanggota($id_anggota);
 		$this->load->view('templates/header',$data);
-		$this->load->view('editanggotaview',$data); //isi sesuai keinginan
+		$this->load->view('divisi/editanggotaview',$data); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
 
@@ -122,7 +122,7 @@ public function tambahmeeting(){
 	$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 	$data['anggotas'] = $this->Anggotadivisi_model->get_all();
 	$this->load->view('templates/header',$data);
-	$this->load->view('tambahmeetingview', $data);
+	$this->load->view('divisi/tambahmeetingview', $data);
 	$this->load->view('templates/footer');
 }   
 
@@ -188,7 +188,7 @@ public function editmeeting($id_meeting){
 	$data['meetings'] = $this->Meeting_model->getonemeeting($id_meeting);
 	$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 	$this->load->view('templates/header',$data);
-	$this->load->view('editmeetingview',$data); //isi sesuai keinginan
+	$this->load->view('divisi/editmeetingview',$data); //isi sesuai keinginan
 	$this->load->view('templates/footer');
 }
 

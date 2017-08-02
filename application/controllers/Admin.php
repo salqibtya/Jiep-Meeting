@@ -20,7 +20,7 @@ class Admin extends CI_Controller
 		if($_SESSION['status']=="admin"){
 			$data['title'] = "Admin";
 			$this->load->view('templates/header',$data);
-			$this->load->view('adminmeetingview',$data);
+			$this->load->view('admin/adminmeetingview',$data);
 			$this->load->view('templates/footer');
 			
 		}else{
@@ -143,7 +143,7 @@ class Admin extends CI_Controller
 		$data['title'] ="Edit Ruangan";
 		$data['ruangans'] = $this->Ruangan_model->getoneruangan($id_ruangan);
 		$this->load->view('templates/header',$data);
-		$this->load->view('editruanganview',$data); //isi sesuai keinginan
+		$this->load->view('admin/editruanganview',$data); //isi sesuai keinginan
 		$this->load->view('templates/footer');
 	}
 
@@ -183,7 +183,7 @@ class Admin extends CI_Controller
 		$data['title'] = "Edit Divisi";
 		$data['divisis'] = $this->Divisi_model->getonedivisi($id_divisi);
 		$this->load->view('templates/header', $data);
-		$this->load->view('editdivisiview', $data);
+		$this->load->view('admin/editdivisiview', $data);
 		$this->load->view('templates/footer');
 
 	}
@@ -229,7 +229,7 @@ class Admin extends CI_Controller
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 		$data['divisis'] = $this->Divisi_model->get_all_divisi();
 		$this->load->view('templates/header',$data);
-		$this->load->view('ruangdivisiview', $data);
+		$this->load->view('admin/ruangdivisiview', $data);
 		$this->load->view('templates/footer');
 
 	}
