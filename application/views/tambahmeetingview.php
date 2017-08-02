@@ -86,20 +86,19 @@
 							</div>
 							<?=form_close()?>
 
-							<div class="form-group">
-								<div class="col-md-9 col-sm-6 col-xs-12">
-									<button type="submit" class="btn btn-success">Submit</button>
-								</div>
+							<div class="form-group pull-right">
+								
+								<button type="submit" class="btn btn-success">Submit</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-		<script type="text/javascript">
-			$(".inputpeserta").select2();
-		</script>
+			<script type="text/javascript">
+				$(".inputpeserta").select2();
+			</script>
 
+		</div>
 	</div>
-</div>
 </body> 

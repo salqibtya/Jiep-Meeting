@@ -1,4 +1,3 @@
-<!-- home content -->
 <body style="background-color:rgb(247,247,247) !important ">
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
    <div class="main_container">
@@ -41,4 +40,3 @@
   </div>
 </div>
 </body>
-<!-- home content -->

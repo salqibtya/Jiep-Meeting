@@ -1,13 +1,12 @@
-<!-- divisi content -->
 <body style="background-color:rgb(247,247,247) !important ">
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
    <div class="main_container">
      <?php $this->load->view('templates/menubar'); ?>
 
      <div class="col-md-12" style="background-color: rgb(247,247,247)">
-    </div>
-    
-      <div class="col-md-12 col-sm-12 col-xs-12">
+     </div>
+
+     <div class="col-md-12 col-sm-12 col-xs-12">
        <div class="x_panel">
         <div class="x_content">
          <div class="col-md">
@@ -64,9 +63,9 @@
           <?php endforeach?>
         </tbody>
       </table>
-    
+
+    </div>
   </div>
-</div>
 </div>
 </div>
 </div>

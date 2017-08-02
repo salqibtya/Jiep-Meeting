@@ -1,4 +1,3 @@
-<!-- admin content -->
 <body style="background-color:rgb(247,247,247) ">
 	<div class="col-md-12 col-sm-9 col-xs-12">
 		<div class="col-md-12 col-sm-9 col-xs-12">
@@ -34,10 +33,10 @@
 									<label class="control-label col-md-3 col-sm-3 col-xs-12">Ruangan</label>
 									<div class="col-md-6 col-sm-6 col-xs-12">
 										<select id="ruangan" name="ruangan"  class="form-control" required>
-										<option value="<?=$meetings_item['ruangan_meeting']?>"><?=$meetings_item['nama_ruangan']?></option>
-										<?php foreach($ruangans as $ruangan_item):?>
-											<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan']?></option>
-										<?php endforeach?>
+											<option value="<?=$meetings_item['ruangan_meeting']?>"><?=$meetings_item['nama_ruangan']?></option>
+											<?php foreach($ruangans as $ruangan_item):?>
+												<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan']?></option>
+											<?php endforeach?>
 										</select>
 									</div>
 								</div>
@@ -83,13 +82,11 @@
 
 						<?php endforeach?>
 						<?=form_close()?>
-						<div class="form-group">
-							<div class="col-md-9 col-sm-6 col-xs-12">
-								<button type="submit" class="btn btn-success">Submit</button>
-							</div>
+						<div class="form-group pull-right">
+							<button type="submit" class="btn btn-success">Submit</button>
 						</div>
 						<!-- untuk mengambil id -->
-									<input type="hidden" name="id" value="<?=$meetings_item['id_meeting']?>">
+						<input type="hidden" name="id" value="<?=$meetings_item['id_meeting']?>">
 					</div>
 					
 				</div>

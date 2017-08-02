@@ -1,11 +1,10 @@
-<!-- admin content -->
 <body style="background-color:rgb(247,247,247) ">
 	<div class="col-md-12 col-sm-9 col-xs-12">
 		<div class="col-md-12 col-sm-9 col-xs-12">
 			<div class="right_col" role="main" style="margin-left:0px!important">
 				<div class="page-title">
 					<div class="title_right">
-						<h3><a href="<?=base_url()?>/Admin"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
+						<h3><a href="<?=base_url()?>/Admin/ruangdivisi"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -39,10 +38,8 @@
 							</div>
 
 						<?php endforeach ?>
-						<div class="form-group">
-							<div class="col-md-9 col-sm-6 col-xs-12">
-								<button type="submit" class="btn btn-success">Submit</button>
-							</div>
+						<div class="form-group pull-right">
+							<button type="submit" class="btn btn-success">Submit</button>
 						</div>
 					</div>
 					<?=form_close()?>
