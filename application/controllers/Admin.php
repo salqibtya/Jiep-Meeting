@@ -15,12 +15,13 @@ class Admin extends CI_Controller
 	public function index()
 	{
 		$data['meetings'] = $this->Meeting_model->get_all_past();
-		
+		$data['divisis'] = $this->Divisi_model->get_all_divisi();
+		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 
 		if($_SESSION['status']=="admin"){
 			$data['title'] = "Admin";
 			$this->load->view('templates/header',$data);
-			$this->load->view('admin/adminmeetingview',$data);
+			$this->load->view('admin/ruangdivisiview',$data);
 			$this->load->view('templates/footer');
 			
 		}else{
@@ -228,6 +229,7 @@ class Admin extends CI_Controller
 		$data['title'] = 'Ruangan dan Divisi';
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 		$data['divisis'] = $this->Divisi_model->get_all_divisi();
+		$data['meetings'] = $this->Meeting_model->get_all_past ();
 		$this->load->view('templates/header',$data);
 		$this->load->view('admin/ruangdivisiview', $data);
 		$this->load->view('templates/footer');

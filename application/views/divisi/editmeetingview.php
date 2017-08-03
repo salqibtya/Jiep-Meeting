@@ -80,6 +80,18 @@
 								
 							</div>
 
+							<div class="form-group col-md-12">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<select id="status" name="status" class="form-control" required>
+										<option value=1>Eksternal
+										</option>
+										<option value=0>Internal
+										</option>
+									</select>
+								</div>
+							</div>
+
 						<?php endforeach?>
 						<?=form_close()?>
 						<div class="form-group pull-right">
