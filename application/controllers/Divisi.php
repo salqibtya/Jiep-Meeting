@@ -19,6 +19,7 @@ class Divisi extends CI_Controller
 		}
 		$data['title'] = 'My Meeting';
 		$data['meetings'] = $this->Meeting_model->get_one_divisi();
+		$data['anggotas'] = $this->Anggotadivisi_model->get_all_anggota();
 		$this->load->view('templates/header',$data);
 		$this->load->view('divisi/divisiview',$data);
 		$this->load->view('templates/footer');
@@ -71,7 +72,7 @@ class Divisi extends CI_Controller
 			'divisi_anggota'=>$this->session->userdata('id_user')
 			);
 		$this->Anggotadivisi_model->insertanggota($data);
-		redirect('Divisi/anggotadivisi');
+		redirect('Divisi');
 	}
 
 	public function editanggota($id_anggota){
@@ -91,8 +92,8 @@ class Divisi extends CI_Controller
 		}
 		$id_anggota  = $this->input->post('id');
 		$data = array(
-			'nama_anggota'=>$this->input->post('nama_anggota'),
-			'email_anggota'=>$this->input->post('email_anggota')
+			'nama'=>$this->input->post('nama_anggota'),
+			'email'=>$this->input->post('email_anggota')
 			);
 		$result = $this->Anggotadivisi_model->updateanggota($id_anggota,$data);
 		if ($result) {
@@ -138,6 +139,7 @@ public function do_tambah(){
 	$estimasi_peserta = $this->input->post('estimasi_peserta');
 	$pic = $this->input->post('pic');
 	$pengguna = $this->input->post('pengguna_meetings');
+	$status = $this->input->post('status');
 
 	$result = $this->cek_meeting($tanggal,$waktu_mulai,$waktu_selesai,$ruangan_meeting);
 	if ($result){
@@ -150,7 +152,8 @@ public function do_tambah(){
 			'waktu_selesai' => $waktu_selesai,
 			'estimasi_peserta' => $estimasi_peserta,
 			'PIC' => $pic,
-			'divisi_meeting'=>$id_divisi
+			'divisi_meeting'=>$id_divisi,
+			'status' => $status
 			);
 
 			//create meeting
@@ -204,7 +207,8 @@ public function do_editmeeting(){
 		'waktu_selesai' => $this->input->post('waktu_selesai'),
 		'estimasi_peserta' => $this->input->post('estimasi_peserta'),
 		'PIC' => $this->input->post('pic'),
-		'divisi_meeting'=>$id_divisi
+		'divisi_meeting'=>$id_divisi,
+		'status'=> $this->input->post('status')
 		);
 
 	$result = $this->Meeting_model->updatemeeting($id_meeting,$data);

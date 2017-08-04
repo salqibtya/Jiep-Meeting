@@ -84,6 +84,19 @@
 									<input type="text" placeholder="PIC" name="pic"  required="true" class="form-control col-md-7 col-xs-12">
 								</div>
 							</div>
+							
+							<div class="form-group col-md-12">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<select id="status" name="status" class="form-control" required>
+											<option value=1>Eksternal
+											</option>
+											<option value=0>Internal
+											</option>
+									</select>
+								</div>
+							</div>
+
 							<?=form_close()?>
 
 							<div class="form-group pull-right">
