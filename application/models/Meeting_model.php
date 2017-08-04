@@ -70,4 +70,34 @@ class Meeting_model extends CI_Model{
         $this->db->update('meeting');
         return ($this->db->affected_rows() != 1) ? false : true;
     }
+
+  	function calculate_time(){
+  		$hour = 0;
+  		$result = $this->db->get('meeting')->result_array();
+  		foreach ($result as $key => $value) {
+  			$waktu_mulai = strtotime($value['waktu_mulai']);
+  			$waktu_selesai = strtotime($value['waktu_selesai']);
+  			$interval = $waktu_selesai-$waktu_mulai;
+  			$hour = $hour + $interval / 3600;	
+  		}
+  		return round($hour);
+  	}
+
+  	function calculate_keterangan(){
+  		$result = $this->db->get('meeting')->result_array();
+  		$internal = 0;
+  		$eksternal = 0;
+  		foreach ($result as $key => $value) {
+  			if ($value['status']==1){
+  				$eksternal ++;
+  			}else{
+  				$internal ++;
+  			}
+  		}
+  		$hasil = array(
+  			'internal'=>$internal,
+  			'eksternal'=>$eksternal
+  		);
+  		return $hasil;
+  	}
 }

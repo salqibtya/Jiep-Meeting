@@ -132,21 +132,21 @@
                         <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
                           <div class="tile-stats">
                             <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
-                            <div class="count">179</div>
+                            <div class="count"><?=$hour?> Jam</div>
                             <h3>Durasi Meeting</h3>
                           </div>
                         </div>
                         <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
                           <div class="tile-stats">
                             <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
-                            <div class="count">179</div>
+                            <div class="count"><?=$keterangan['internal']?></div>
                             <h3>Total Meeting Internal</h3>
                           </div>
                         </div>
                         <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
                           <div class="tile-stats">
                             <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
-                            <div class="count">179</div>
+                            <div class="count"><?=$keterangan['eksternal']?></div>
                             <h3>Total Meeting Eksternal</h3>
                           </div>
                         </div>

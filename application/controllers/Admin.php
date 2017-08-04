@@ -230,6 +230,8 @@ class Admin extends CI_Controller
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 		$data['divisis'] = $this->Divisi_model->get_all_divisi();
 		$data['meetings'] = $this->Meeting_model->get_all_past ();
+		$data['hour'] = $this->Meeting_model->calculate_time();
+		$data['keterangan'] = $this->Meeting_model->calculate_keterangan();
 		$this->load->view('templates/header',$data);
 		$this->load->view('admin/ruangdivisiview', $data);
 		$this->load->view('templates/footer');
