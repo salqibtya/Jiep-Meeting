@@ -1,6 +1,5 @@
 {
     "require": {
-                "monolog/monolog": "*"
-    },
-    "minimum-stability": "dev"
+        "google/apiclient": "2.0"
+    }
 }
