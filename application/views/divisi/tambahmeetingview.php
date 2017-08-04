@@ -33,7 +33,7 @@
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<select id="ruangan" name="ruangan" class="form-control" required>
 										<?php foreach($ruangans as $ruangan_item):?>
-											<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan'];?></option>
+											<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan'];?> (Kapasitas : <?=$ruangan_item['kapasitas_ruangan'];?> orang)</option>
 										<?php endforeach ?>
 									</select>
 								</div>
@@ -89,10 +89,10 @@
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<select id="status" name="status" class="form-control" required>
-											<option value=1>Eksternal
-											</option>
-											<option value=0>Internal
-											</option>
+										<option value=1>Eksternal
+										</option>
+										<option value=0>Internal
+										</option>
 									</select>
 								</div>
 							</div>
