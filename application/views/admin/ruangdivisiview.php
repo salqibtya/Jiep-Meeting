@@ -154,7 +154,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>All Divisi</h2>
@@ -177,8 +177,7 @@
                           labels: ["OD", "IT & GA", "PMU", "EM", "Corsec", "IA", "MBA","F & A"],
                           datasets: [{
                             label: 'Total Meeting perdivisi',
-                            data: [<?php while($ambilDataDivisi = mysqli_fetch_arry(mysqli_query
-                            )?>],
+                            data: [20, 50, 31, 45, 21, 13, 15, 18],
                             backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -217,7 +216,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>All Ruangan</h2>
@@ -237,7 +236,7 @@
                       var myChartOne = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                          labels: ["MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2","MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2"],
+                          labels: ["Meeting Room 1", "Meeting Room 2","Meeting Room 3","Auditorium GD", "Ruang Tembolong","Ruang Audit"," IT&GA Room","OD Room","EM Room", "PMU Room","PM Room","MBD Room", "Rumah Tangga","Raden Ajeng","Mblo","Pantry Room"],
                           datasets: [{
                             label: 'Total Meeting perdivisi',
                             data: [12, 30, 3, 5, 2, 3, 5, 8, 12, 30, 3, 5, 2, 3, 5, 8],

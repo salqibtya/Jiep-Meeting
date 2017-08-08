@@ -83,6 +83,8 @@ class Meeting_model extends CI_Model{
   		return round($hour);
   	}
 
+  	
+
   	function calculate_keterangan(){
   		$result = $this->db->get('meeting')->result_array();
   		$internal = 0;
@@ -100,5 +102,6 @@ class Meeting_model extends CI_Model{
   		);
   		return $hasil;
   	}
+
 
 }
