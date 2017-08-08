@@ -6,6 +6,12 @@
 <script src="<?=base_url('assets/js/')?>custom.min.js"></script>
 <!-- /basic -->
 
+<!--bar chart js -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="<?=base_url('assets/js/')?>barchart.js"></script>
+<!--bar chart js -->
+
 <!-- dataTables js -->
 <script src="<?=base_url('assets/js/')?>datatables/jquery.dataTables.min.js"></script>
 <script src="<?=base_url('assets/js/')?>datatables/dataTables.bootstrap.min.js"></script>
