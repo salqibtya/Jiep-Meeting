@@ -35,7 +35,12 @@ class Viewsarah extends CI_Controller {
 		}else{
 			redirect('/Home');
 		}
+<<<<<<< HEAD
 		
+=======
+	}
+
+>>>>>>> origin/master
 	function get_divisi()
     {
 	    $id_divisi = $this->input->post('id_divisi');

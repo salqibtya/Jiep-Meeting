@@ -1,15 +1,16 @@
 <!-- basic -->
+<script src="<?=base_url('assets/js/')?>jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="<?=base_url('assets/js/')?>jquery.min.js"></script>
 <script src="<?=base_url('assets/js/')?>bootstrap.min.js"></script>
 <script src="<?=base_url('assets/js/')?>fastclick.js"></script>
 <script src="<?=base_url('assets/js/')?>nprogress.js"></script>
 <script src="<?=base_url('assets/js/')?>custom.min.js"></script>
+
 <!-- /basic -->
 
 <!--bar chart js -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="<?=base_url('assets/js/')?>barchart.js"></script>
 <!--bar chart js -->
 
 <!-- dataTables js -->
