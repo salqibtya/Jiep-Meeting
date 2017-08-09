@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <script src="<?=base_url('assets/js/')?>jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.bundle.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.bundle.min.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.js"></script>
+  <title></title>
 </head>
 <body>
 
-              <div class="row top_tiles">
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
-                    <div class="count"><?=$waktu['hour']?> Jam</div>
-                    <h3>Total Durasi Meeting</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
-                    <div class="count"><?=$waktu['hour_internal']?> Jam</div>
-                    <h3>Durasi Meeting Internal</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
-                    <div class="count"><?=$waktu['hour_eksternal']?> Jam</div>
-                    <h3>Durasi Meeting Eksternal</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="row top_tiles">
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
-                    <div class="count"><?=$jumlah['all']?> Kali</div>
-                    <h3>Total Meeting</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
-                    <div class="count"><?=$jumlah['internal']?> Kali</div>
-                    <h3>Meeting Internal</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
-                    <div class="count"><?=$jumlah['eksternal']?> Kali</div>
-                    <h3>Meeting Eksternal</h3>
-                  </div>
-                </div>
-              </div>
+  <div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
+        <div class="count"><?=$waktu['hour']?> Jam</div>
+        <h3>Total Durasi Meeting</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
+        <div class="count"><?=$waktu['hour_internal']?> Jam</div>
+        <h3>Durasi Meeting Internal</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
+        <div class="count"><?=$waktu['hour_eksternal']?> Jam</div>
+        <h3>Durasi Meeting Eksternal</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
+        <div class="count"><?=$jumlah['all']?> Kali</div>
+        <h3>Total Meeting</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
+        <div class="count"><?=$jumlah['internal']?> Kali</div>
+        <h3>Meeting Internal</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
+        <div class="count"><?=$jumlah['eksternal']?> Kali</div>
+        <h3>Meeting Eksternal</h3>
+      </div>
+    </div>
+  </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>All Divisi</h2>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>All Divisi</h2>
                    <!-- <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -65,7 +70,6 @@
                   </div>
 
                   <div class="x_content">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
                     <canvas id="myChart" width="500" height="100"></canvas>
                     <script>
                       var ctx = document.getElementById("myChart").getContext('2d');
@@ -114,7 +118,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>All Ruangan</h2>
@@ -127,7 +131,6 @@
                   </div>
 
                   <div class="x_content">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
                     <canvas id="myChartOne" width="500" height="100"></canvas>
                     <script>
                       var ctx = document.getElementById("myChartOne").getContext('2d');
@@ -248,5 +251,5 @@
 
       </div>
     </div>
-</body>
-</html>
+  </body>
+  </html>

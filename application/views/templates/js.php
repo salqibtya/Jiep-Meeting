@@ -9,9 +9,12 @@
 <!-- /basic -->
 
 <!--bar chart js -->
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<!--bar chart js -->
+ <script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
+ <script src="<?=base_url('assets/js/')?>Chart.bundle.js"></script>
+ <script src="<?=base_url('assets/js/')?>Chart.bundle.min.js"></script>
+ <script src="<?=base_url('assets/js/')?>Chart.js"></script>
+ 
+ <!--bar chart js -->
 
 <!-- dataTables js -->
 <script src="<?=base_url('assets/js/')?>datatables/jquery.dataTables.min.js"></script>
