@@ -96,6 +96,7 @@ class Meeting_model extends CI_Model{
   		return $hasil;
   	}
 
+
   	function calculate_jumlah_meeting($start,$end){
   		$this->db->where('tanggal >=',$start)->where('tanggal <=',$end);
   		$result = $this->db->get('meeting')->result_array();
@@ -116,6 +117,6 @@ class Meeting_model extends CI_Model{
   			'all'=>$all
   		);
   		return $hasil;
-  	}
 
+	}
 }

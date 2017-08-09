@@ -126,7 +126,10 @@
                 <div class="col-md-12" id="showdata"></div>
                 <div class="clearfix"></div>
               </div>
-            <div>
+            </div>
+          </div>
+
+
 
   <!-- modal for add room--> 
   <?=form_open('/Admin/insertruangan')?>
