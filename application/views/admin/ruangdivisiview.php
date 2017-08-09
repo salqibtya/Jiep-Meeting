@@ -1,20 +1,20 @@
 <script>
-    $(document).ready(function(){
-        $("#startTimestamp").on('change',function(){
-            var start = $(this).val();
-          $("#endTimestamp").on('change',function(){
-            var end = $(this).val();
-            $.ajax({
-              type:"POST",
-              data:{start:start,end:end},
-              url:"<?=base_url('Admin/get_meeting_date')?>",
-              success:function(data){
-                $("#showdata").html(data)
-              }
-            })
-          });
-        });        
-    });
+  $(document).ready(function(){
+    $("#startTimestamp").on('change',function(){
+      var start = $(this).val();
+      $("#endTimestamp").on('change',function(){
+        var end = $(this).val();
+        $.ajax({
+          type:"POST",
+          data:{start:start,end:end},
+          url:"<?=base_url('Admin/get_meeting_date')?>",
+          success:function(data){
+            $("#showdata").html(data)
+          }
+        })
+      });
+    });        
+  });
 </script>
 <body style="background-color:rgb(247,247,247) ">
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
@@ -110,26 +110,143 @@
           <!-- content 2 -->
           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="meeting-tab">
 
+<<<<<<< HEAD
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Total Meeting Pertahun</h2>
+                   <!-- <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    </ul> -->
+
+                    <div class="clearfix"></div>
+                  </div>
+
+                   <div class="x_content">
+                    <canvas id="myCharttwo" width="500" height="100"></canvas>
+                    <script>
+                      var ctx = document.getElementById("myCharttwo").getContext('2d');
+                      var myCharttwo = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                          labels: ["OD", "IT & GA", "PMU", "EM", "Corsec", "IA", "MBA","F & A"],
+                          datasets: [{
+                            label: 'Total Meeting perdivisi',
+                            data:[20,59,18,29,40,45,16,47],
+                            
+                            pointBorderColor: "rgba(75,192,192,1)",
+                            pointBorderWidth: 2,
+                            borderColor:
+                            'rgba(255,99,132,1)',
+                            borderWidth: 2
+                          }]
+                        },
+                        options: {
+                          scales: {
+                            yAxes: [{
+                              ticks: {
+                                beginAtZero:true
+                              }
+                            }]
+                          }
+                        }
+                      });
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <div class="x_panel">
+                <div class="x_title">
+                  <div class="filter">
+                    <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                     <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
+                     <div id="settanggal">
+=======
             <div class="x_panel">
               <div class="x_title">
                 <div class="filter">
                   <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
                       <div id="settanggal">
+>>>>>>> origin/master
                        <span>Start</span>
                        <input type="date" id="startTimestamp">
                        <span> End</span>
                        <input type="date" id="endTimestamp" >
+<<<<<<< HEAD
+                     </div> 
+                   </div>
+                 </div>
+                 <div class="col-md-12" id="showdata"></div>
+                 <div class="clearfix"></div>
+               </div>
+=======
                       </div> 
                   </div>
                 </div>
                 <div class="col-md-12" id="showdata"></div>
                 <div class="clearfix"></div>
               </div>
+>>>>>>> origin/master
              </div>
 
 
 
+<<<<<<< HEAD
+
+
+             <!-- modal for add room--> 
+             <?=form_open('/Admin/insertruangan')?>
+             <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: black; text-align: center;">Tambah Ruangan</h4>
+                  </div>
+                  <div class="modal-body">
+                    <label class="col-sm-12  control-label" for="sm" style="color: black; text-align: center;">Nama Ruangan</label>
+                    <input class="form-control" type="text" name="nama_ruangan" id="sm" style="color: black" required>
+
+                    <label class="col-sm-12  control-label" for="sm" style="color: black; text-align: center;">Kapasitas</label>
+                    <input class="form-control" type="number" name="kapasitas_ruangan"  min="0" id="sm" style="color: black" required>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Tambah</button>
+                  </div>
+                  <!-- modal for add room-->
+                </div>  
+              </div>
+            </div>
+            <?=form_close()?>
+
+            <!-- Modal -->
+            <?=form_open('Admin/insertdivisi')?>
+            <div class="modal fade" id="myModal1" role="dialog">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" style="color: black;text-align: center;">Tambah Divisi</h4>
+                  </div>
+                  <div class="modal-body">
+                    <label class="col-sm-12  control-label"  for="sm" style="color: black;text-align: center;">Nama Divisi</label>
+                    <input class="form-control"  required="true"  type="text" name="nama_divisi" id="sm" style="color: black">
+                    <label class="col-sm-12  control-label"  for="sm" style="color: black;text-align: center;">Username </label>
+                    <input class="form-control" type="text" name="username_divisi" required="true"  id="sm" style="color: black">
+                    <label class="col-sm-12  control-label" for="sm" style="color: black;text-align: center;">Password</label>
+                    <input class="form-control" type="text" name="password" id="sm" required="true" style="color: black">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="font-family: sans-serif;">Tambah</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?= form_close()?>
+          </body>
+=======
   <!-- modal for add room--> 
   <?=form_open('/Admin/insertruangan')?>
   <div class="modal fade" id="myModal" role="dialog">
@@ -180,3 +297,4 @@
   </div>
   <?= form_close()?>
 </body>
+>>>>>>> origin/master

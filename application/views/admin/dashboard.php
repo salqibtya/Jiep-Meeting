@@ -1,102 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-  <script>
-     var data = [
-    {
-        value: 300,
-        color:"#F7464A",
-        highlight: "#FF5A5E",
-        label: "Red"
-    },
-    {
-        value: 50,
-        color: "#46BFBD",
-        highlight: "#5AD3D1",
-        label: "Green"
-    },
-    {
-        value: 100,
-        color: "#FDB45C",
-        highlight: "#FFC870",
-        label: "Yellow"
-    },
-    {
-        value: 40,
-        color: "#949FB1",
-        highlight: "#A8B3C5",
-        label: "Grey"
-    },
-    {
-        value: 120,
-        color: "#4D5360",
-        highlight: "#616774",
-        label: "Dark Grey"
-    }
-
-];
-
-var ctx = document.getElementById("myChart").getContext("2d");
-var myNewChart = new Chart(ctx).PolarArea(data);
-                  
-  </script>
-
+  <script src="<?=base_url('assets/js/')?>jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.bundle.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.bundle.min.js"></script>
+  <script src="<?=base_url('assets/js/')?>Chart.js"></script>
+  <title></title>
 </head>
 <body>
 
-              <div class="row top_tiles">
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
-                    <div class="count"><?=$waktu['hour']?> Jam</div>
-                    <h3>Total Durasi Meeting</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
-                    <div class="count"><?=$waktu['hour_internal']?> Jam</div>
-                    <h3>Durasi Meeting Internal</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
-                    <div class="count"><?=$waktu['hour_eksternal']?> Jam</div>
-                    <h3>Durasi Meeting Eksternal</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="row top_tiles">
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
-                    <div class="count"><?=$jumlah['all']?> Kali</div>
-                    <h3>Total Meeting</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
-                    <div class="count"><?=$jumlah['internal']?> Kali</div>
-                    <h3>Meeting Internal</h3>
-                  </div>
-                </div>
-                <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                  <div class="tile-stats">
-                    <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
-                    <div class="count"><?=$jumlah['eksternal']?> Kali</div>
-                    <h3>Meeting Eksternal</h3>
-                  </div>
-                </div>
-              </div>
+  <div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
+        <div class="count"><?=$waktu['hour']?> Jam</div>
+        <h3>Total Durasi Meeting</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
+        <div class="count"><?=$waktu['hour_internal']?> Jam</div>
+        <h3>Durasi Meeting Internal</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
+        <div class="count"><?=$waktu['hour_eksternal']?> Jam</div>
+        <h3>Durasi Meeting Eksternal</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row top_tiles">
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-time"></i></div>
+        <div class="count"><?=$jumlah['all']?> Kali</div>
+        <h3>Total Meeting</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-in"></i></div>
+        <div class="count"><?=$jumlah['internal']?> Kali</div>
+        <h3>Meeting Internal</h3>
+      </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-3 col-sm-6 col-xs-12">
+      <div class="tile-stats">
+        <div class="icon"><i class="glyphicon glyphicon-log-out"></i></div>
+        <div class="count"><?=$jumlah['eksternal']?> Kali</div>
+        <h3>Meeting Eksternal</h3>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>All Divisi</h2>
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>All Divisi</h2>
-                   <!-- <ul class="nav navbar-right panel_toolbox">
+                <!-- <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                     </ul> -->
@@ -106,7 +75,49 @@ var myNewChart = new Chart(ctx).PolarArea(data);
 
                   <div class="x_content">
                     <canvas id="myChart" width="500" height="100"></canvas>
-                    
+                    <script>
+                      var ctx = document.getElementById("myChart").getContext('2d');
+                      var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                          labels: ["OD", "IT & GA", "PMU", "EM", "Corsec", "IA", "MBA","F & A"],
+                          datasets: [{
+                            label: 'Total Meeting perdivisi',
+                            data:[1,2,3,4,5,6,7,8],
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)' 
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                          }]
+                        },
+                        options: {
+                          scales: {
+                            yAxes: [{
+                              ticks: {
+                                beginAtZero:true
+                              }
+                            }]
+                          }
+                        }
+                      });
+                    </script>
                   </div>
                 </div>
               </div>
@@ -125,7 +136,65 @@ var myNewChart = new Chart(ctx).PolarArea(data);
 
                   <div class="x_content">
                     <canvas id="myChartOne" width="500" height="100"></canvas>
-                    
+                    <script>
+                      var ctx = document.getElementById("myChartOne").getContext('2d');
+                      var myChartOne = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                          labels: ["MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2","MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2"],
+                          datasets: [{
+                            label: 'Total Meeting perdivisi',
+                            data: [12, 30, 3, 5, 2, 3, 5, 8, 12, 30, 3, 5, 2, 3, 5, 8],
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)'  
+                            ],
+                            borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                          }]
+                        },
+                        options: {
+                          scales: {
+                            yAxes: [{
+                              ticks: {
+                                beginAtZero:true
+                              }
+                            }]
+                          }
+                        }
+                      });
+                    </script>
                   </div>
                 </div>
               </div>
@@ -186,5 +255,5 @@ var myNewChart = new Chart(ctx).PolarArea(data);
 
       </div>
     </div>
-</body>
-</html>
+  </body>
+  </html>

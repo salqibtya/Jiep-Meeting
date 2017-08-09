@@ -12,8 +12,7 @@
                   </div>
 
                   <div class="x_content">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-                    <canvas id="myChart" width="500" height="100"></canvas>
+                     <canvas id="myChart" width="500" height="100"></canvas>
                     <script>
                       var ctx = document.getElementById("myChart").getContext('2d');
                       var myChart = new Chart(ctx, {

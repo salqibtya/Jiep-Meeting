@@ -18,7 +18,7 @@ class Viewsarah extends CI_Controller {
 		/*if($_SESSION['status']=="admin"){*/
 			$data['title'] = 'Nyoba anuan';
 			$data['divisis'] = $this->Divisi_model->get_all_divisi();
-			$data['meetings'] = $this->Meeting_model->get_all_divisi();
+			$data['meetings'] = $this->Meeting_model->get_all();
 			$this->load->view('templates/header',$data);
 			$this->load->view('cobalagi', $data);
 			$this->load->view('templates/footer');
@@ -29,7 +29,7 @@ class Viewsarah extends CI_Controller {
 			$jumlah->where('divisi', $id_divisi);
 			if($divisi_meeting = $id_divisi){
 				$jumlah->get();
-				$Hasil = count($jumlah->all)}
+				$Hasil = count($jumlah->all);}
 			}
 	/*	
 		}else{
