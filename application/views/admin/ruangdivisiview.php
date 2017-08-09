@@ -155,12 +155,8 @@
                   </div>
                 </div>
               </div>
-              <div class="x_panel">
-                <div class="x_title">
-                  <div class="filter">
-                    <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                     <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
-                     <div id="settanggal">
+              <!--Nambah dashboard-->
+                    <div id="settanggal">
                       <div class="x_panel">
                         <div class="x_title">
                           <div class="filter">
@@ -171,19 +167,16 @@
                                <input type="date" id="startTimestamp">
                                <span> End</span>
                                <input type="date" id="endTimestamp" >
-                             </div> 
-                           </div>
-                         </div>
-                         <div class="col-md-12" id="showdata"></div>
-                         <div class="clearfix"></div>
-                       </div>
-                     </div> 
-                   </div>
-                 </div>
-                 <div class="col-md-12" id="showdata"></div>
-                 <div class="clearfix"></div>
-               </div>
-             </div>
+                             </div>   
+                            </div>
+                          </div> 
+                   
+                          <div class="col-md-12" id="showdata"></div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
+                    </div>
+                  <!--/Nambah Dashboard-->
 
              <!-- modal for add room--> 
              <?=form_open('/Admin/insertruangan')?>
