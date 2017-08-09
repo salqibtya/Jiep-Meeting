@@ -23,15 +23,6 @@ class Viewsarah extends CI_Controller {
 		}else{
 			redirect('/Home');
 		}
-		
-
-	public function index(){
-		$data['title'] = "Edit Divisi";
-		// $data = array('modals' => 'true','modals' => set_value('alert','false'),);
-		$this->load->view('templates/header',$data);
-		$this->load->view('coba'); //isi sesuai keinginan
-		$this->load->view('templates/footer');
-
 	}
 
 	function get_divisi()

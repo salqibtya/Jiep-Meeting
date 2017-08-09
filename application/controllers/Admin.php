@@ -14,7 +14,6 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-		$data['meetings'] = $this->Meeting_model->get_all_past();
 		$data['divisis'] = $this->Divisi_model->get_all_divisi();
 		$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 
@@ -22,9 +21,6 @@ class Admin extends CI_Controller
 			$data['title'] = 'Admin';
 			$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 			$data['divisis'] = $this->Divisi_model->get_all_divisi();
-			$data['meetings'] = $this->Meeting_model->get_all_past ();
-			$data['hour'] = $this->Meeting_model->calculate_time();
-			$data['keterangan'] = $this->Meeting_model->calculate_keterangan();
 			$this->load->view('templates/header',$data);
 			$this->load->view('admin/ruangdivisiview', $data);
 			$this->load->view('templates/footer');
@@ -227,20 +223,13 @@ class Admin extends CI_Controller
 		redirect('Admin/ruangdivisi');
 	}
 
-	public function ruangdivisi(){
-		if($_SESSION['status']!='admin'){
-			redirect('');
-		}
-			$data['title'] = 'Ruangan dan Divisi';
-			$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
-			$data['divisis'] = $this->Divisi_model->get_all_divisi();
-			$data['meetings'] = $this->Meeting_model->get_all_past ();
-			$data['hour'] = $this->Meeting_model->calculate_time();
-			$data['keterangan'] = $this->Meeting_model->calculate_keterangan();
-			$this->load->view('templates/header',$data);
-			$this->load->view('admin/ruangdivisiview', $data);
-			$this->load->view('templates/footer');
-
+	public function get_meeting_date(){
+		$tanggal_mulai = $this->input->post('start');
+		$tanggal_selesai = $this->input->post('end');
+		$data['waktu'] = $this->Meeting_model->calculate_time($tanggal_mulai,$tanggal_selesai);
+		$data['jumlah'] =$this->Meeting_model->calculate_jumlah_meeting($tanggal_mulai,$tanggal_selesai);
+		$data['meetings'] = $this->Meeting_model->get_all_past($tanggal_mulai,$tanggal_selesai);
+		$this->load->view('admin/dashboard',$data);	
 	}
 
 } 
