@@ -99,7 +99,7 @@ class Divisi extends CI_Controller
 		if ($result) {
 			$notification = '<div class="alert alert-success alert-dismissible fade in" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			Ruangan telah berhasil diubah.
+			Data anggota telah berhasil diubah.
 		</div>';
 
 		$this->session->set_flashdata('notification', $notification);
@@ -107,7 +107,7 @@ class Divisi extends CI_Controller
 		$notification = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 		</button>
-		Pengubahan ruangan gagal.
+		Pengubahan data anggota gagal.
 	</div>';
 
 	$this->session->set_flashdata('notification', $notification);
@@ -124,7 +124,7 @@ public function tambahmeeting(){
 	$data['anggotas'] = $this->Anggotadivisi_model->get_all();
 	$this->load->view('templates/header',$data);
 	$this->load->view('divisi/tambahmeetingview', $data);
-	$this->load->view('templates/footer');
+	//$this->load->view('templates/footer');
 }   
 
 public function do_tambah(){	
@@ -249,7 +249,7 @@ function cek_meeting($tanggal,$jam_mulai,$jam_selesai,$id_ruangan){
 				echo $value['perihal'].'case 2 <br>';
 			}
 		}else{
-			$pananda  = $penanda + 1;
+			$penanda  = $penanda + 1;
 			echo 'laaah <br>';
 		}
 	}

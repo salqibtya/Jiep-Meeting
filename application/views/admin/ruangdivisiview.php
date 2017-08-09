@@ -35,7 +35,7 @@
           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="ruangan-tab">
 
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
+              <table class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
 
                 <thead>
                   <tr class="headings">
@@ -62,7 +62,7 @@
               </table>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
+              <table class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
 
                 <thead>
                   <tr class="headings">
@@ -238,7 +238,7 @@
                         data: {
                           labels: ["Meeting Room 1", "Meeting Room 2","Meeting Room 3","Auditorium GD", "Ruang Tembolong","Ruang Audit"," IT&GA Room","OD Room","EM Room", "PMU Room","PM Room","MBD Room", "Rumah Tangga","Raden Ajeng","Mblo","Pantry Room"],
                           datasets: [{
-                            label: 'Total Meeting perdivisi',
+                            label: 'Total ruangan per meeting',
                             data: [12, 30, 3, 5, 2, 3, 5, 8, 12, 30, 3, 5, 2, 3, 5, 8],
                             backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -303,7 +303,7 @@
                       </li>
                     </ul>
                     <div class="clearfix"></div>
-                    <table class="table table-striped table-bordered jambo_table bulk_action">
+                    <table id="datatable-responsive" class="table table-striped table-bordered jambo_table bulk_action">
                       <thead>
                         <tr class="headings">
                           <th style="text-align:center">Tanggal</th>
@@ -395,7 +395,7 @@
           <input class="form-control" type="text" name="password" id="sm" required="true" style="color: black">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Tambah</button>
+          <button type="submit" class="btn btn-primary" style="font-family: sans-serif;">Tambah</button>
         </div>
       </div>
     </div>

@@ -150,7 +150,7 @@ class Admin extends CI_Controller
 		$data['ruangans'] = $this->Ruangan_model->getoneruangan($id_ruangan);
 		$this->load->view('templates/header',$data);
 		$this->load->view('admin/editruanganview',$data); //isi sesuai keinginan
-		$this->load->view('templates/footer');
+		//$this->load->view('templates/footer');
 	}
 
 	public function do_edit($id_ruangan){
@@ -190,7 +190,7 @@ class Admin extends CI_Controller
 		$data['divisis'] = $this->Divisi_model->getonedivisi($id_divisi);
 		$this->load->view('templates/header', $data);
 		$this->load->view('admin/editdivisiview', $data);
-		$this->load->view('templates/footer');
+		//$this->load->view('templates/footer');
 
 	}
 
