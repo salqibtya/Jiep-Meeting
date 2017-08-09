@@ -35,7 +35,7 @@
             <!-- content 1 -->
             <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="mmeeting-tab">
 
-              <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+              <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowraptable-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
                     <th style="text-align:center">Tanggal</th>
@@ -67,7 +67,7 @@
             <!-- content 2 -->
             <div role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="anggota-tab">
 
-              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap table-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
                     <th style="text-align:center">Nomor</th>
@@ -75,7 +75,6 @@
                     <th style="text-align:center">Email Anggota</th>
                     <th style="text-align:center;width:100px">
                       <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></button>
-
                     </th>
                   </tr>
                 </thead>
@@ -100,7 +99,7 @@
             <!-- content 3 -->
             <div role="tabpanel" class="tab-pane fade active in" id="tab_content3" aria-labelledby="jmeeting-tab">
 
-              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap table-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
                     <th style="text-align:center">Tanggal</th>
@@ -127,14 +126,12 @@
 
             </div>
             <!-- content 3 -->
-
           </div>
         </div>
-
       </div>
     </div>
   </div> 
-  <a href="<?=base_url('Divisi/tambahmeeting')?>" class="btn-floating btn-large blue" style="color: rgb(63,83,103); position:fixed; bottom: 60px; right: 35px !important"><i class="glyphicon glyphicon-plus-sign fa-4x" ></i></a>
+  <a href="<?=base_url('Divisi/tambahmeeting')?>" class="btn-floating btn-large blue" style="color: rgb(63,83,103); position:fixed; bottom: 60px; right: 35px ; z-index: 1000!important"><i class="glyphicon glyphicon-plus-sign fa-4x" ></i></a>
   <div class="clearfix"></div>
 </div>
 </div>

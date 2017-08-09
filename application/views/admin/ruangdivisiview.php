@@ -49,7 +49,7 @@
           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="ruangan-tab">
 
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
+              <table class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
 
                 <thead>
                   <tr class="headings">
@@ -76,7 +76,7 @@
               </table>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
+              <table class="table table-striped table-bordered dt-responsive nowrap jambo_table bulk_action" cellspacing="0" width="100%">
 
                 <thead>
                   <tr class="headings">
@@ -115,7 +115,7 @@
                 <div class="filter">
                   <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
-                  <div id="settanggal">
+                      <div id="settanggal">
                        <span>Start</span>
                        <input type="date" id="startTimestamp">
                        <span> End</span>
@@ -126,8 +126,7 @@
                 <div class="col-md-12" id="showdata"></div>
                 <div class="clearfix"></div>
               </div>
-            </div>
-          </div>
+             </div>
 
 
 
@@ -174,7 +173,7 @@
           <input class="form-control" type="text" name="password" id="sm" required="true" style="color: black">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Tambah</button>
+          <button type="submit" class="btn btn-primary" style="font-family: sans-serif;">Tambah</button>
         </div>
       </div>
     </div>
