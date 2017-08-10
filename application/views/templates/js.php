@@ -6,6 +6,8 @@
 <script src="<?=base_url('assets/js/')?>nprogress.js"></script>
 <script src="<?=base_url('assets/js/')?>custom.min.js"></script>
 
+<script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
+
 <!-- /basic -->
 
 <!--bar chart js -->

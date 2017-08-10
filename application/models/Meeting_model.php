@@ -119,4 +119,10 @@ class Meeting_model extends CI_Model{
   		return $hasil;
 
 	}
+
+	public function get_divisi_date($id_divisi,$start,$end){
+		$this->db->where('id_divisi',$id_divisi)->where('tanggal >=',$start)->where('tanggal <=',$end);
+		$query = $this->db->get('meeting');
+		return $query->num_rows();
+	}
 }
