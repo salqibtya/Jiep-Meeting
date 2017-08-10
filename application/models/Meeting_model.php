@@ -28,6 +28,19 @@ class Meeting_model extends CI_Model{
 		$this->db->where('tanggal >=',$start)->where('tanggal <=',$end);
 		return $this->db->get('meeting')->result_array();
 	}
+
+	public function get_division_count($id_divisi,$start,$end)
+	{
+		$this->db->where('divisi_meeting',$id_divisi)->where('tanggal >=',$start)->where('tanggal <=',$end);
+		return $this->db->get('meeting')->num_rows();
+	}
+
+	public function get_room_count($id_ruangan,$start,$end)
+	{
+		$this->db->where('ruangan_meeting',$id_ruangan)->where('tanggal >=',$start)->where('tanggal <=',$end);
+		return $this->db->get('meeting')->num_rows();
+	}
+	
 	
 	public function get_one_divisi(){
 		$id_divisi = $this->session->userdata('id_user');
@@ -117,11 +130,5 @@ class Meeting_model extends CI_Model{
   		);
   		return $hasil;
 
-	}
-
-	public function get_divisi_date($id_divisi,$start,$end){
-		$this->db->where('id_divisi',$id_divisi)->where('tanggal >=',$start)->where('tanggal <=',$end);
-		$query = $this->db->get('meeting');
-		return $query->num_rows();
 	}
 }

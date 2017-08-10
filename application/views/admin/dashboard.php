@@ -81,15 +81,11 @@
                             ?>],
                           datasets: [{
                             label: 'Total Meeting perdivisi',
-                            data:[<?php 
-                                $hitung = count($divisi);
-                                for($i=0;$i<8;$i++){
-                                  echo $hitung;
-                                  if ($i<8){
-                                    echo ",";
-                                  }
+                            data:[<?php
+                                foreach ($much_divisi as $key => $value) {
+                                    echo $value.",";
                                 }
-                            ?>],
+                                  ?>],
                             backgroundColor:[
                             <?php
                               for($i=0;$i<=$hitung;$i++){
@@ -152,7 +148,11 @@
                             ?>],
                           datasets: [{
                             label: 'Total Pemakaian Ruangan',
-                            data: [12, 30, 3, 5, 2, 3, 5, 8, 12, 30, 3, 5, 2, 3, 5, 8],
+                            data: [<?php
+                                foreach ($much_ruangan as $key => $value) {
+                                    echo $value.",";
+                                }
+                                  ?>],
                             backgroundColor:[
                             <?php
                               for($i=0;$i<=$hitung;$i++){

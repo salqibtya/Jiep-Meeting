@@ -230,6 +230,28 @@ class Admin extends CI_Controller
 		$data['meetings'] = $this->Meeting_model->get_all_past($tanggal_mulai,$tanggal_selesai);
 		$data['divisi'] = $this->Divisi_model->get_all_divisi();
 		$data['ruangan'] = $this->Ruangan_model->get_all_ruangan();
+		$data['much_divisi'] = $this->hitung_meeting_divisi($tanggal_mulai,$tanggal_selesai);
+		$data['much_ruangan'] = $this->hitung_meeting_ruangan($tanggal_mulai,$tanggal_selesai);
 		$this->load->view('admin/dashboard',$data);	
+	}
+
+	public function hitung_meeting_divisi($start,$end){
+		$datanya = array();
+		$divisi  = $this->Divisi_model->get_all_divisi();
+		foreach ($divisi as $key => $value) {
+			$counter = $this->Meeting_model->get_division_count($value['id_divisi'],$start,$end);
+			array_push($datanya,$counter);
+		}
+		return $datanya;
+	}
+
+	public function hitung_meeting_ruangan($start,$end){
+		$datanya = array();
+		$ruangan  = $this->Ruangan_model->get_all_ruangan();
+		foreach ($ruangan as $key => $value) {
+			$counter = $this->Meeting_model->get_room_count($value['id_ruangan'],$start,$end);
+			array_push($datanya,$counter);
+		}
+		return $datanya;
 	}
 }
