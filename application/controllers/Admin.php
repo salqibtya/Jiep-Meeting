@@ -228,24 +228,9 @@ class Admin extends CI_Controller
 		$data['waktu'] = $this->Meeting_model->calculate_time($tanggal_mulai,$tanggal_selesai);
 		$data['jumlah'] =$this->Meeting_model->calculate_jumlah_meeting($tanggal_mulai,$tanggal_selesai);
 		$data['meetings'] = $this->Meeting_model->get_all_past($tanggal_mulai,$tanggal_selesai);
-	//	$data['graph-divisi']  =$this->get_divisi($tanggal_mulai,$tanggal_selesai);
+		$data['divisi'] = $this->Divisi_model->get_all_divisi();
+		$data['ruangan'] = $this->Ruangan_model->get_all_ruangan();
 		$this->load->view('admin/dashboard',$data);	
 	}
 
-	public function get_divisi($start,$end){
-		$nama_divisi = array();
-		$pemakaian = array();
-		$divisi = $this->Divisi_model->get_all_divisi();
-		foreach ($divisi as $key => $value) {
-			 array_push($nama_divisi,$value['nama_divisi']);
-			 $id_divisi = $value['id_divisi'];
-			 $temporary = $this->Meeting_model->get_divisi_date($id_divisi,$start,$end);
-			 array_push($pemakaian,$temporary);
-		}
-		$hasil = array(
-			'nama_divisi'=>$nama_divisi,
-			'pemakaian'=>$pemakaian
-		);
-		return $hasil;
-	}
 } 

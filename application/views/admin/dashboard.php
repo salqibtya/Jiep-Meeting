@@ -80,29 +80,39 @@
                       var myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                          labels: ["OD", "IT & GA", "PMU", "EM", "Corsec", "IA", "MBA","F & A"],
+                          labels: [<?php 
+                                $hitung = count($divisi);
+                                foreach ($divisi as $key => $value) {
+                                      echo '"'.$value['nama_divisi'].'"'; 
+                                      if ($key<$hitung){
+                                       echo ",";
+                                       }
+                                }
+                            ?>],
                           datasets: [{
                             label: 'Total Meeting perdivisi',
-                            data:[1,2,3,4,5,6,7,8],
-                            backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)' 
+                            data:[<?php 
+                                $hitung = count($divisi);
+                                for($i=0;$i<8;$i++){
+                                  echo $hitung;
+                                  if ($i<8){
+                                    echo ",";
+                                  }
+                                }
+                            ?>],
+                            backgroundColor:[
+                            <?php
+                              for($i=0;$i<=$hitung;$i++){
+                                 echo '"'."rgba(54, 162, 235, 0.2)".'",'; 
+                              }
+                            ?>
                             ],
-                            borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            borderColor:[
+                            <?php
+                              for($i=0;$i<=$hitung;$i++){
+                                 echo '"'."rgba(54, 162, 235, 1)".'",'; 
+                              }
+                            ?>
                             ],
                             borderWidth: 1
                           }]
@@ -141,45 +151,31 @@
                       var myChartOne = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                          labels: ["MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2","MR 1", "MR 2","MR 3","AGD", "RT","RA","ITMR","RT2"],
+                          labels:  [<?php 
+                                $hitung2 = count($ruangan);
+                                foreach ($ruangan as $key => $value) {
+                                      echo '"'.$value['nama_ruangan'].'"'; 
+                                      if ($key<$hitung2){
+                                       echo ",";
+                                       }
+                                }
+                            ?>],
                           datasets: [{
-                            label: 'Total Meeting perdivisi',
+                            label: 'Total Pemakaian Ruangan',
                             data: [12, 30, 3, 5, 2, 3, 5, 8, 12, 30, 3, 5, 2, 3, 5, 8],
-                            backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'  
+                            backgroundColor:[
+                            <?php
+                              for($i=0;$i<=$hitung;$i++){
+                                 echo '"'."rgba(255, 99, 132, 0.2)".'",'; 
+                              }
+                            ?>
                             ],
-                            borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            borderColor:[
+                            <?php
+                              for($i=0;$i<=$hitung;$i++){
+                                 echo '"'."rgba(255,99,132,1)".'",'; 
+                              }
+                            ?>
                             ],
                             borderWidth: 1
                           }]
