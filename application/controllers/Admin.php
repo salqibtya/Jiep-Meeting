@@ -58,7 +58,7 @@ class Admin extends CI_Controller
 			</div>';
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('/Admin/ruangdivisi');		
+		redirect('/Admin');		
 	}
 
 	public function insertruangan(){
@@ -85,7 +85,7 @@ class Admin extends CI_Controller
 			</div>';
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('/Admin/ruangdivisi');
+		redirect('/Admin');
 	}
 
 	public function deleteruangan($id_ruangan){
@@ -174,7 +174,7 @@ class Admin extends CI_Controller
 
 			$this->session->set_flashdata('notification', $notification);
 		}
-		redirect('Admin/ruangdivisi');
+		redirect('Admin');
 	}
 
 	public function editdivisi($id_divisi){
@@ -219,7 +219,7 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('notification', $notification);
 		}
 		
-		redirect('Admin/ruangdivisi');
+		redirect('Admin');
 	}
 
 	public function get_meeting_date(){
@@ -232,5 +232,4 @@ class Admin extends CI_Controller
 		$data['ruangan'] = $this->Ruangan_model->get_all_ruangan();
 		$this->load->view('admin/dashboard',$data);	
 	}
-
-} 
+}

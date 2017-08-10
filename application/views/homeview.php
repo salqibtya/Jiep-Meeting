@@ -2,7 +2,7 @@
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
    <div class="main_container">
     <div class="right_col" role="main" style="margin-left:0px !important">
-      
+
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_content">
@@ -10,12 +10,12 @@
               <table class="table table-striped table-bordered jambo_table bulk_action">
                 <thead>
                   <tr class="headings">
-                    <th style="text-align:center">Tanggal</th>
-                    <th style="text-align:center">Jam Mulai</th>
-                    <th style="text-align:center">Jam Selesai</th>
-                    <th style="text-align:center">Ruangan</th>
-                    <th style="text-align:center">Perihal</th> 
-                    <th style="text-align:center">Pengguna</th> 
+                    <th style="text-align:center">Date</th>
+                    <th style="text-align:center">Start</th>
+                    <th style="text-align:center">Finish</th>
+                    <th style="text-align:center">Room</th>
+                    <th style="text-align:center">Subject</th> 
+                    <th style="text-align:center">User</th> 
                   </tr>
                 </thead>
                 <tbody>
