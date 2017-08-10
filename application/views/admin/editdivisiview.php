@@ -4,7 +4,7 @@
 			<div class="right_col" role="main" style="margin-left:0px!important">
 				<div class="page-title">
 					<div class="title_right" style="background-color: rgb(247,247,247)">
-						<h3><a href="<?=base_url()?>/Admin/ruangdivisi"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
+						<h3><a href="<?=base_url()?>/Admin/"><i class="fa fa-chevron-left"></i></a> <?=$title?></h3>
 						<div class="clearfix"></div>
 					</div>
 				</div>	

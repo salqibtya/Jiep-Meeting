@@ -1,4 +1,4 @@
-<body style="background-color:rgb(247,247,247) !important ">
+<body style="background-color:rgb(255,255,255) !important ">
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
     <div class="main_container">
 
@@ -12,8 +12,7 @@
 
     <div class="clearfix"></div>
     <div class="">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-       <div class="x_panel">
+      <div class="col-md-12 col-sm-12 col-xs-12" style="background-color:rgb(255,255,255)">
 
         <!-- konten di sini -->
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
@@ -22,9 +21,9 @@
           <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
             <li role="presentation" class="active"><a href="#tab_content1" id="mmeeting-tab" role="tab" data-toggle="tab" aria-expanded="true">My Meeting</a>
             </li>
-            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="anggota-tab" data-toggle="tab" aria-expanded="false">Anggota</a>
+            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="anggota-tab" data-toggle="tab" aria-expanded="false">My Member</a>
             </li>
-            <li role="presentation" class=""><a href="#tab_content3" role="tab" id="jmeeting-tab" data-toggle="tab" aria-expanded="false">Meeting</a>
+            <li role="presentation" class=""><a href="#tab_content3" role="tab" id="jmeeting-tab" data-toggle="tab" aria-expanded="false">All Meeting</a>
             </li>
           </ul>
           <!-- /tab header -->
@@ -38,11 +37,11 @@
               <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowraptable-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
-                    <th style="text-align:center">Tanggal</th>
-                    <th style="text-align:center">Jam Mulai</th>
-                    <th style="text-align:center">Jam Selesai</th>
-                    <th style="text-align:center">Ruangan</th>
-                    <th style="text-align:center">Perihal</th>
+                    <th style="text-align:center">Date</th>
+                    <th style="text-align:center">Start</th>
+                    <th style="text-align:center">Finish</th>
+                    <th style="text-align:center">Room</th>
+                    <th style="text-align:center">Subject</th>
                     <th style="text-align:center">Edit Meeting</th>
                   </tr>
                 </thead>
@@ -70,11 +69,35 @@
               <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap table-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
-                    <th style="text-align:center">Nomor</th>
-                    <th style="text-align:center">Nama Anggota</th>
-                    <th style="text-align:center">Email Anggota</th>
+                    <th style="text-align:center">Number</th>
+                    <th style="text-align:center">Member Name</th>
+                    <th style="text-align:center">Member Email</th>
                     <th style="text-align:center;width:100px">
-                      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Tambah</i></button>
+                      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"> Add</i></button>
+
+                      <!-- modal tambah anggota --> 
+
+                      <?=form_open('/Divisi/tambahanggota')?>
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title" style="color: black; text-align: center;">Add New Member</h4>
+                            </div>
+                            <div class="modal-body">
+                              <input class="form-control" placeholder="insert name member" type="text" name="nama_anggota" style="color: black; width: 100%" required><br>
+                              <br>
+                              <input class="form-control" placeholder="insert email member" type="email" name="email_anggota" style="color: black; width: 100%" required>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                          </div>  
+                        </div>
+                      </div>
+                      <?=form_close()?>
+
                     </th>
                   </tr>
                 </thead>
@@ -94,6 +117,7 @@
                 </tbody>
               </table>
             </div>
+
             <!-- content 2 -->
 
             <!-- content 3 -->
@@ -102,12 +126,12 @@
               <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap table-bordered jambo_table bulk_action" cellspacing="0" width="100%">
                 <thead>
                   <tr class="headings">
-                    <th style="text-align:center">Tanggal</th>
-                    <th style="text-align:center">Jam Mulai</th>
-                    <th style="text-align:center">Jam Selesai</th>
-                    <th style="text-align:center">Ruangan</th>
-                    <th style="text-align:center">Perihal</th> 
-                    <th style="text-align:center">Pengguna</th> 
+                    <th style="text-align:center">Date</th>
+                    <th style="text-align:center">Start</th>
+                    <th style="text-align:center">Finish</th>
+                    <th style="text-align:center">Room</th>
+                    <th style="text-align:center">Subject</th> 
+                    <th style="text-align:center">User</th> 
                   </tr>
                 </thead>
                 <tbody>
@@ -136,28 +160,5 @@
 </div>
 </div>
 
-<!-- modal tambah anggota --> 
-<?=form_open('Divisi/tambahanggota')?>
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="color: black;text-align: center;">Tambah Anggota</h4>
-      </div>
-      <div class="modal-body">
-       <label class="col-sm-12  control-label" for="sm" style="color: black;text-align: center;">Nama Anggota</label>
-       <input class="form-control" type="text" name="nama_anggota" id="sm" style="color: black" required="true">
-       <br>
-       <label class="col-sm-12  control-label" for="sm" style="color: black;text-align: center;">Email Anggota</label>
-       <input class="form-control" type="text" name="email_anggota"  min="0" id="sm" style="color: black">
-     </div>
-     <div class="modal-footer">
-       <button type="submit" class="btn btn-primary">Tambah</button>
-     </div>
-   </div>  
- </div>
-</div>
-<?=form_close()?>
 
 </body>
