@@ -23,7 +23,7 @@ class Log extends CI_Controller {
 					$alert = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 				</button>
-				<span><strong>Perhatian!</strong> Username atau password salah.
+				<span><strong>Warning !</strong> Username or password is incorrect.
 				</div>';
 					$this->session->set_flashdata('alert', $alert);
 					$this->load->view('logview');

@@ -26,7 +26,7 @@
        <input type="password" class="form-control" placeholder="Password" name="userpass" required="" />
      </div>
      <div>
-       <button class="btn btn-default submit" type="submit">Masuk</button>
+       <button class="btn btn-default submit" type="submit">Login</button>
      </div>
      <?= $this->session->flashdata('alert') ?>
      <div class="clearfix"></div>
