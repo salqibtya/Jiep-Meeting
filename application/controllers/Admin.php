@@ -23,8 +23,6 @@ class Admin extends CI_Controller
 			$data['divisis'] = $this->Divisi_model->get_all_divisi();
 			$this->load->view('templates/header',$data);
 			$this->load->view('admin/ruangdivisiview', $data);
-			$this->load->view('templates/footer');
-			
 		}else{
 			redirect('/Home');
 		}
@@ -66,8 +64,9 @@ class Admin extends CI_Controller
 			redirect('');
 		}
 		$data = array(
-			'nama_ruangan'=>$this->input->post('nama_ruangan'),
-			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan')
+			'nama_ruangan'=>$this->input->post('id_room'),
+			'kapasitas_ruangan'=>$this->input->post('kapasitas_ruangan'),
+			'ruangan_nama'=>$this->input->post('nama_ruangan')
 		);
 		$result  = $this->Ruangan_model->insert($data);
 

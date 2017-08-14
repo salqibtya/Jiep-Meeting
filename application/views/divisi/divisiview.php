@@ -49,8 +49,8 @@
                   <?php foreach($meeting_divisi as $meetings_item):?>
                     <tr>
                       <td style="text-align:center"><?=date("d-m-Y",strtotime($meetings_item['tanggal']))?></td>
-                      <td style="text-align:center"><?=$meetings_item['waktu_mulai']?></td>
-                      <td style="text-align:center"><?=$meetings_item['waktu_selesai']?></td>
+                      <td style="text-align:center"><?=date("H:i",strtotime($meetings_item['waktu_mulai']))?></td>
+                      <td style="text-align:center"><?=date("H:i",strtotime($meetings_item['waktu_selesai']))?></td>
                       <td style="text-align:center"><?=$meetings_item['nama_ruangan']?></td>
                       <td style="text-align:center;"><?=$meetings_item['perihal']?></td>
                       <td style="text-align:center;">
@@ -138,8 +138,8 @@
                   <?php foreach($meetings as $meetings_item):?>
                     <tr>
                       <td style="text-align:center"><?=date("d-m-Y",strtotime($meetings_item['tanggal']))?></td>
-                      <td style="text-align:center"><?=$meetings_item['waktu_mulai']?></td>
-                      <td style="text-align:center"><?=$meetings_item['waktu_selesai']?></td>
+                      <td style="text-align:center"><?=date("H:i",strtotime($meetings_item['waktu_mulai']))?></td>
+                      <td style="text-align:center"><?=date("H:i",strtotime($meetings_item['waktu_selesai']))?></td>
                       <td style="text-align:center"><?=$meetings_item['nama_ruangan']?></td>
                       <td style="text-align:center;"><?=$meetings_item['perihal']?></td>
                       <td style="text-align:center"><?=$meetings_item['nama_divisi']?></td>

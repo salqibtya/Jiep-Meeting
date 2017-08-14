@@ -58,7 +58,6 @@ class Divisi extends CI_Controller
 		$data['anggotas'] = $this->Anggotadivisi_model->getoneanggota($id_anggota);
 		$this->load->view('templates/header',$data);
 		$this->load->view('divisi/editanggotaview',$data); //isi sesuai keinginan
-		$this->load->view('templates/footer');
 	}
 
 	public function do_editanggota(){
@@ -167,7 +166,7 @@ public function editmeeting($id_meeting){
 	$data['ruangans'] = $this->Ruangan_model->get_all_ruangan();
 	$this->load->view('templates/header',$data);
 	$this->load->view('divisi/editmeetingview',$data); //isi sesuai keinginan
-	$this->load->view('templates/footer');
+	
 }
 
 public function do_editmeeting(){

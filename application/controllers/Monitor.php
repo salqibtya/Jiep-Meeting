@@ -11,8 +11,8 @@ class Monitor extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'Informasi Meeting';
-		$data['meetings'] = $this->Meeting_model->get_all(); 
+		$data['meetings'] = $this->Meeting_model->get_all_monitor(); 
 
-		$this->load->view('monitor', $data);
+		$this->load->view('monitor/monitor', $data);
 	}
 }

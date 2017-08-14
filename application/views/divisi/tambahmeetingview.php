@@ -33,7 +33,7 @@
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<select id="ruangan" name="ruangan" class="form-control" required>
 										<?php foreach($ruangans as $ruangan_item):?>
-											<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan'];?> (Kapasitas : <?=$ruangan_item['kapasitas_ruangan'];?> orang)</option>
+											<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['ruangan_nama'];?> (Kapasitas : <?=$ruangan_item['kapasitas_ruangan'];?> orang)</option>
 										<?php endforeach ?>
 									</select>
 								</div>

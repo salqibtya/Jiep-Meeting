@@ -17,6 +17,8 @@
   });
 </script>
 
+
+
 <body style="background-color:rgb(247,247,247) ">
   <div class="container body" style="top: 0; bottom: 0; left: 0; height: 100%">
     <div class="main_container">
@@ -55,6 +57,7 @@
                 <thead>
                   <tr class="headings">
                     <th style="text-align:center">Number</th>
+                    <th style="text-align:center">ID Room</th>
                     <th style="text-align:center">Room</th>
                     <th style="text-align:center">Capasity</th>
                     <th style="text-align:center;width:100px"><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add</button>
@@ -70,6 +73,8 @@
                             <h4 class="modal-title" style="color: black; text-align: center;">Add New Room</h4>
                           </div>
                           <div class="modal-body">
+                            <input class="form-control" placeholder="insert ID room" type="text" name="id_room" id="sm" style="color: black" required>
+                            <br>
                             <input class="form-control" placeholder="insert new room" type="text" name="nama_ruangan" id="sm" style="color: black" required>
                             <br>
                             <input class="form-control" placeholder="insert capacity" type="number" name="kapasitas_ruangan"  min="0" id="sm" style="color: black" required>
@@ -93,6 +98,7 @@
                   <tr>
                     <td style="text-align:center"><?php echo $number;$number = $number+1;?></td>
                     <td style="text-align:center"><?= $ruangan_item['nama_ruangan']?></td>
+                    <td style="text-align:center"><?= $ruangan_item['ruangan_nama']?></td>
                     <td style="text-align:center"><?= $ruangan_item['kapasitas_ruangan']?></td>     
                     <td style="text-align:center;width:100px">
                       <a href="<?php echo base_url(); ?>Admin/editruangan/<?php echo $ruangan_item['id_ruangan'];?>" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
@@ -179,63 +185,54 @@
                     <script>
                       var ctx = document.getElementById("myCharttwo").getContext('2d');
                       var myCharttwo = new Chart(ctx, {
-                        type: 'line',
+                        type: 'type',
                         data: {
-                          labels: ["OD", "IT & GA", "PMU", "EM", "Corsec", "IA", "MBA","F & A"],
+                          labels:
+                          ["2015", "2016", "2017"],
                           datasets: [{
                             label: 'Total Meeting perdivisi',
-                            data:[20,59,18,29,40,45,16,47],
-                            
+                            data:[97,85,75],
                             pointBorderColor: "rgba(75,192,192,1)",
                             pointBorderWidth: 2,
                             borderColor:
                             'rgba(255,99,132,1)',
                             borderWidth: 2
                           }]
-                        },
-                        options: {
-                          scales: {
-                            yAxes: [{
-                              ticks: {
-                                beginAtZero:true
-                              }
-                            }]
-                          }
                         }
                       });
                     </script>
                   </div>
                 </div>
               </div>
-              <!--Nambah dashboard-->
-              <div id="settanggal">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <div class="filter">
-                      <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                       <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
-                       <div id="settanggal">
-                         <span>Start</span>
-                         <input type="date" id="startTimestamp">
-                         <span> End</span>
-                         <input type="date" id="endTimestamp" >
-                       </div>   
-                     </div>
-                   </div> 
-                   
-                   <div class="col-md-12" id="showdata"></div>
-                   <div class="clearfix"></div>
+                <!--Nambah dashboard-->
+                <div id="settanggal">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <div class="filter">
+                        <div  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> Pilih Tanggal
+                         <div id="settanggal">
+                           <span>Start</span>
+                           <input type="date" id="startTimestamp">
+                           <span> End</span>
+                           <input type="date" id="endTimestamp" >
+                         </div>   
+                       </div>
+                     </div> 
+
+                     <div class="col-md-12" id="showdata"></div>
+                     <div class="clearfix"></div>
+                   </div>
                  </div>
                </div>
+               <!--/Nambah Dashboard-->
+
              </div>
-             <!--/Nambah Dashboard-->
-
            </div>
-         </div>
 
+         </div>
        </div>
      </div>
    </div>
  </div>
-</div>
 </body>

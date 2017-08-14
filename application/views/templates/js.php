@@ -5,18 +5,12 @@
 <script src="<?=base_url('assets/js/')?>fastclick.js"></script>
 <script src="<?=base_url('assets/js/')?>nprogress.js"></script>
 <script src="<?=base_url('assets/js/')?>custom.min.js"></script>
-
-<script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
-
 <!-- /basic -->
 
 <!--bar chart js -->
- <script src="<?=base_url('assets/js/')?>Chart.min.js"></script>
- <script src="<?=base_url('assets/js/')?>Chart.bundle.js"></script>
- <script src="<?=base_url('assets/js/')?>Chart.bundle.min.js"></script>
- <script src="<?=base_url('assets/js/')?>Chart.js"></script>
- 
- <!--bar chart js -->
+<script src="<?=base_url('assets/js/')?>Chart.js"></script>
+<!--bar chart js -->
+
 
 <!-- dataTables js -->
 <script src="<?=base_url('assets/js/')?>datatables/jquery.dataTables.min.js"></script>

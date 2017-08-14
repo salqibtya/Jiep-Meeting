@@ -35,7 +35,7 @@
 										<select id="ruangan" name="ruangan"  class="form-control" required>
 											<option value="<?=$meetings_item['ruangan_meeting']?>"><?=$meetings_item['nama_ruangan']?></option>
 											<?php foreach($ruangans as $ruangan_item):?>
-												<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['nama_ruangan']?></option>
+												<option value="<?=$ruangan_item['id_ruangan']?>"><?=$ruangan_item['ruangan_nama'];?> (Kapasitas : <?=$ruangan_item['kapasitas_ruangan'];?> orang)</option>
 											<?php endforeach?>
 										</select>
 									</div>
@@ -74,11 +74,7 @@
 										<input type="text" placeholder="PIC" value="<?=$meetings_item['PIC']?>" name="pic"  required="true" class="form-control col-md-7 col-xs-12">
 									</div>
 								</div>
-								<div>
-									<input type="hidden" name="id" value="<?=$meetings_item['id_meeting']?>">
-								</div>
 								
-							</div>
 
 							<div class="form-group col-md-12">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
@@ -90,6 +86,11 @@
 										</option>
 									</select>
 								</div>
+							</div>
+							<div>
+									<input type="hidden" name="id" value="<?=$meetings_item['id_meeting']?>">
+								</div>
+								
 							</div>
 
 						<?php endforeach?>
